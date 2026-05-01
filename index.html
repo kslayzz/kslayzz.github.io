@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>KMA — Chartered Accountancy</title>
+<title>Kamesh Mali & Associates — Chartered Accountancy</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -33,7 +33,6 @@
     overflow-x: hidden;
   }
 
-  /* ─── NAV ─── */
   nav {
     position: fixed;
     top: 0; left: 0; right: 0;
@@ -52,23 +51,17 @@
   nav.scrolled { box-shadow: 0 4px 32px rgba(139,30,30,0.08); }
 
   .logo {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 2rem;
-    font-weight: 600;
-    color: var(--red);
-    letter-spacing: 0.08em;
+    display: flex;
+    align-items: center;
     text-decoration: none;
+    flex-shrink: 0;
   }
 
-  .logo span {
-    display: inline-block;
-    width: 6px;
-    height: 6px;
-    background: var(--red);
-    border-radius: 50%;
-    margin-bottom: 4px;
-    margin-left: 2px;
-    vertical-align: middle;
+  .logo-img {
+    height: 44px;
+    width: auto;
+    display: block;
+    object-fit: contain;
   }
 
   .nav-links {
@@ -148,7 +141,6 @@
     border-bottom: 1px solid var(--grey-light);
   }
 
-  /* ─── HERO ─── */
   .hero {
     min-height: 100vh;
     position: relative;
@@ -349,7 +341,6 @@
     z-index: 3;
   }
 
-  /* ─── MARQUEE ─── */
   .marquee-bar {
     background: var(--red);
     padding: 14px 0;
@@ -389,7 +380,6 @@
     to { transform: translateX(-50%); }
   }
 
-  /* ─── SECTION COMMONS ─── */
   section { position: relative; }
 
   .section-tag {
@@ -425,7 +415,6 @@
     color: var(--red);
   }
 
-  /* ─── ABOUT ─── */
   .about {
     padding: 120px 8vw;
     display: grid;
@@ -483,8 +472,6 @@
     margin-top: 4px;
   }
 
-  .about-content { }
-
   .about-body {
     font-size: 0.88rem;
     line-height: 1.9;
@@ -526,7 +513,6 @@
     line-height: 1.6;
   }
 
-  /* ─── SERVICES ─── */
   .services {
     padding: 120px 8vw 100px;
     background: #111010;
@@ -759,7 +745,6 @@
 
   .btn-ghost:hover svg { transform: translateX(4px); }
 
-  /* ─── GLOBAL ─── */
   .global {
     padding: 120px 8vw;
     display: grid;
@@ -812,12 +797,6 @@
     filter: brightness(0.9) saturate(0.85);
   }
 
-  .global-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to top right, rgba(139,30,30,0.4) 0%, transparent 60%);
-  }
-
   .global-float {
     position: absolute;
     bottom: 2rem;
@@ -843,7 +822,6 @@
     opacity: 0.85;
   }
 
-  /* ─── TEAM ─── */
   .team {
     padding: 120px 8vw;
     background: var(--white);
@@ -878,7 +856,7 @@
   .team-img-wrap {
     position: relative;
     overflow: hidden;
-    height: 300px;
+    height: 380px;
   }
 
   .team-img-wrap img {
@@ -891,16 +869,6 @@
   }
 
   .team-card:hover .team-img-wrap img { transform: scale(1.04); }
-
-  .team-img-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to top, rgba(139,30,30,0.75) 0%, transparent 50%);
-    opacity: 0;
-    transition: opacity 0.3s;
-  }
-
-  .team-card:hover .team-img-overlay { opacity: 1; }
 
   .team-info {
     padding: 1.5rem 1.8rem 2rem;
@@ -949,7 +917,6 @@
     background: var(--red);
   }
 
-  /* ─── VISION ─── */
   .vision {
     padding: 120px 8vw;
     background: var(--red);
@@ -1025,7 +992,6 @@
     color: rgba(255,255,255,0.7);
   }
 
-  /* ─── CTA ─── */
   .cta-section {
     padding: 120px 8vw;
     background: var(--black);
@@ -1099,7 +1065,6 @@
 
   .contact-detail:hover { color: var(--red-ultra); }
 
-  /* ─── FOOTER ─── */
   footer {
     background: var(--red-dark);
     padding: 2rem 8vw;
@@ -1131,7 +1096,6 @@
     line-height: 1.7;
   }
 
-  /* ─── SCROLL ANIMATIONS ─── */
   .fade-up {
     opacity: 0;
     transform: translateY(28px);
@@ -1143,7 +1107,6 @@
     transform: translateY(0);
   }
 
-  /* ─── RESPONSIVE ─── */
   @media (max-width: 900px) {
     nav { padding: 0 4vw; }
     .nav-links, .nav-cta { display: none; }
@@ -1194,9 +1157,8 @@
 </head>
 <body>
 
-<!-- NAV -->
 <nav id="navbar">
-  <a href="#" class="logo">KMA<span></span></a>
+  <a href="#" class="logo"><img src="assets/logo.png" alt="Kamesh Mali & Associates" class="logo-img"></a>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#services">Services</a></li>
@@ -1218,10 +1180,9 @@
   <a href="#contact">Contact</a>
 </div>
 
-<!-- HERO -->
 <section class="hero">
   <div class="hero-left">
-    <p class="hero-tag">Chartered Accountancy · Pune</p>
+    <p class="hero-tag">Kamesh Mali &amp; Associates</p>
     <h1 class="hero-h1">Where Precision<br>Meets <em>Purpose.</em></h1>
     <p class="hero-sub">KMA is a modern, technology-enabled CA firm delivering end-to-end financial, audit, tax, and advisory solutions — built on accuracy, honesty, and deep expertise.</p>
     <div class="hero-actions">
@@ -1244,7 +1205,7 @@
     </div>
   </div>
   <div class="hero-right">
-    <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=900&auto=format&fit=crop&q=80" alt="Professional team">
+    <img src="assets/hero-team.jpg" alt="Professional team">
     <div class="hero-overlay"></div>
     <div class="hero-badge">
       <div class="hero-badge-label">Trusted by</div>
@@ -1253,7 +1214,6 @@
   </div>
 </section>
 
-<!-- MARQUEE -->
 <div class="marquee-bar" aria-hidden="true">
   <div class="marquee-track">
     <div class="marquee-item">Statutory Audit<div class="marquee-dot"></div></div>
@@ -1275,11 +1235,10 @@
   </div>
 </div>
 
-<!-- ABOUT -->
 <section class="about" id="about">
   <div class="about-img-wrap fade-up">
     <div class="about-img-frame"></div>
-    <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?w=700&auto=format&fit=crop&q=80" alt="KMA professionals at work">
+    <img src="assets/about-team.jpg" alt="KMA professionals at work">
     <div class="about-badge">
       <div class="about-badge-num">CA</div>
       <div class="about-badge-txt">Certified<br>Experts</div>
@@ -1311,7 +1270,6 @@
   </div>
 </section>
 
-<!-- SERVICES -->
 <section class="services" id="services">
   <div class="services-header fade-up">
     <div>
@@ -1456,7 +1414,6 @@
   </div>
 </section>
 
-<!-- GLOBAL -->
 <section class="global" id="global">
   <div class="fade-up">
     <p class="section-tag">Our Reach</p>
@@ -1473,15 +1430,13 @@
     </div>
   </div>
   <div class="global-visual fade-up">
-    <img class="global-img" src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&auto=format&fit=crop&q=80" alt="Global business skyline">
-    <div class="global-overlay"></div>
+    <img class="global-img" src="assets/global-skyline.png" alt="Global business skyline">
     <div class="global-float">
       7<small>Countries Served</small>
     </div>
   </div>
 </section>
 
-<!-- TEAM -->
 <section class="team" id="team">
   <div class="team-header fade-up">
     <p class="section-tag">Leadership</p>
@@ -1490,8 +1445,7 @@
   <div class="team-grid">
     <div class="team-card fade-up">
       <div class="team-img-wrap">
-        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=500&auto=format&fit=crop&q=80" alt="CA Kamesh Mali">
-        <div class="team-img-overlay"></div>
+        <img src="assets/team-kamesh.jpg" alt="CA Kamesh Mali">
       </div>
       <div class="team-info">
         <div class="team-role">Founder & Partner</div>
@@ -1502,8 +1456,7 @@
     </div>
     <div class="team-card fade-up">
       <div class="team-img-wrap">
-        <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=500&auto=format&fit=crop&q=80" alt="CA Chandra Prakash Khemka">
-        <div class="team-img-overlay"></div>
+        <img src="assets/team-cp-khemka.jpg" alt="CA Chandra Prakash Khemka">
       </div>
       <div class="team-info">
         <div class="team-role">Partner</div>
@@ -1514,8 +1467,7 @@
     </div>
     <div class="team-card fade-up">
       <div class="team-img-wrap">
-        <img src="https://images.unsplash.com/photo-1573496799652-408c2ac9fe98?w=500&auto=format&fit=crop&q=80" alt="CA Ritika Loya">
-        <div class="team-img-overlay"></div>
+        <img src="assets/team-ritika.jpg" alt="CA Ritika Loya">
       </div>
       <div class="team-info">
         <div class="team-role">Partner</div>
@@ -1526,8 +1478,7 @@
     </div>
     <div class="team-card fade-up">
       <div class="team-img-wrap">
-        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=500&auto=format&fit=crop&q=80" alt="CA Ameya Lokhande">
-        <div class="team-img-overlay"></div>
+        <img src="assets/team-ameya.jpg" alt="CA Ameya Lokhande">
       </div>
       <div class="team-info">
         <div class="team-role">Partner</div>
@@ -1538,8 +1489,7 @@
     </div>
     <div class="team-card fade-up">
       <div class="team-img-wrap">
-        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&auto=format&fit=crop&q=80" alt="CA Yogesh Kumar">
-        <div class="team-img-overlay"></div>
+        <img src="assets/team-yogesh.jpg" alt="CA Yogesh Kumar">
       </div>
       <div class="team-info">
         <div class="team-role">Partner</div>
@@ -1550,8 +1500,7 @@
     </div>
     <div class="team-card fade-up">
       <div class="team-img-wrap">
-        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=500&auto=format&fit=crop&q=80" alt="CS Paritosh Khandelwal">
-        <div class="team-img-overlay"></div>
+        <img src="assets/team-paritosh.jpg" alt="CS Paritosh Khandelwal">
       </div>
       <div class="team-info">
         <div class="team-role">Partner — Legal & Secretarial</div>
@@ -1563,7 +1512,6 @@
   </div>
 </section>
 
-<!-- VISION -->
 <section class="vision">
   <div class="fade-up" style="position:relative;z-index:1;">
     <p class="section-tag">Our Direction</p>
@@ -1590,7 +1538,6 @@
   </div>
 </section>
 
-<!-- CTA -->
 <section class="cta-section" id="contact">
   <p class="section-tag">Get in Touch</p>
   <h2 class="section-title" style="margin-bottom:0;">Let's Build Something<br><em>Exceptional Together</em></h2>
@@ -1621,10 +1568,9 @@
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
-  <div class="footer-logo">KMA</div>
-  <div class="footer-text">© 2024 KMA Chartered Accountants · All Rights Reserved</div>
+  <div class="footer-logo"><img src="assets/logo.png" alt="Kamesh Mali & Associates" style="height:36px;width:auto;filter:brightness(0) invert(1);opacity:0.9;"></div>
+  <div class="footer-text">© 2024 Kamesh Mali &amp; Associates · All Rights Reserved</div>
   <div class="footer-addr">805, One Place, Salunke Vihar Road<br>Pune – 411040, Maharashtra, India</div>
 </footer>
 
@@ -1645,7 +1591,7 @@
   });
 
   const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry, i) => {
+    entries.forEach((entry) => {
       if (entry.isIntersecting) {
         setTimeout(() => entry.target.classList.add('visible'), 80);
         observer.unobserve(entry.target);
