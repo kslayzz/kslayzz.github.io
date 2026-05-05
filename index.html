@@ -41,7 +41,7 @@ body{font-family:'Montserrat',sans-serif;background:var(--white);color:var(--bla
 #navbar.nav-hidden{transform:translateY(-100%);}
 
 .logo{display:flex;align-items:center;text-decoration:none;gap:10px;flex-shrink:0;}
-.logo-img{height:40px;width:auto;display:block;object-fit:contain;}
+.logo-img{height:60px;width:auto;display:block;object-fit:contain;}
 .logo-fallback{display:none;flex-direction:column;}
 .logo-text{font-family:'Cormorant Garamond',serif;font-size:1.45rem;font-weight:600;color:var(--red);letter-spacing:0.06em;line-height:1;}
 .logo-sub{font-size:0.48rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--grey-dark);margin-top:2px;}
@@ -62,7 +62,7 @@ body{font-family:'Montserrat',sans-serif;background:var(--white);color:var(--bla
 
 .hero{min-height:100vh;position:relative;display:grid;grid-template-columns:1fr 1fr;overflow:hidden;}
 .hero-left{display:flex;flex-direction:column;justify-content:center;padding:140px 5vw 80px 8vw;position:relative;z-index:2;}
-.hero-tag{font-size:0.65rem;font-weight:700;letter-spacing:0.3em;text-transform:uppercase;color:var(--red);margin-bottom:2rem;display:flex;align-items:center;gap:12px;}
+.hero-tag{font-size:1.25rem;font-weight:700;letter-spacing:0.3em;text-transform:uppercase;color:var(--red);margin-bottom:2rem;display:flex;align-items:center;gap:12px;}
 .hero-tag::before{content:'';display:block;width:40px;height:1px;background:var(--red);}
 .hero-h1{font-family:'Cormorant Garamond',serif;font-size:clamp(3.2rem,5.5vw,5.8rem);font-weight:300;line-height:1.08;color:var(--black);margin-bottom:1.8rem;}
 .hero-h1 em{font-style:italic;color:var(--red);}
@@ -352,13 +352,13 @@ footer{background:var(--red-dark);padding:3rem 8vw 2rem;}
 <body>
 
 <div id="splash" role="status" aria-label="Loading">
-  <img src="assets/logo.png" alt="KMA" class="splash-logo" width="110" height="110" fetchpriority="high">
+  <img src="assets/logo.png" alt="KMA" class="splash-logo" width="160" height="160" fetchpriority="high">
   <div class="splash-bar"><div class="splash-progress"></div></div>
 </div>
 
 <div id="navbar" role="navigation">
   <a href="#" class="logo">
-    <img src="assets/logo.png" alt="KMA" class="logo-img" width="40" height="40" loading="eager" decoding="async" onerror="this.style.display='none'">
+    <img src="assets/logo.png" alt="KMA" class="logo-img" width="100" height="100" loading="eager" decoding="async" onerror="this.style.display='none'">
     <div class="logo-fallback">
       <div class="logo-text">KMA</div>
       <div class="logo-sub">Chartered Accountants</div>
