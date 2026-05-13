@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Insights & Articles — Kamesh Mali & Associates</title>
+<meta name="description" content="Expert insights on taxation, audit, GST, transfer pricing, and financial advisory from Kamesh Mali & Associates — Chartered Accountants, Pune.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Insights & Articles — Kamesh Mali & Associates">
+<meta property="og:description" content="Expert insights on taxation, audit, GST, transfer pricing, and financial advisory from KMA's partners.">
+<meta property="og:image" content="assets/og-default.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://kmaca.in/articles.html">
+<link rel="icon" type="image/png" href="assets/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --red:#8B1E1E;--red-light:#A83232;--red-dark:#6B1414;
+  --white:#FAFAF8;--off-white:#F2EFEB;--grey-light:#E8E4DF;--grey-mid:#B5AFA8;
+  --grey-dark:#5A534C;--black:#1A1614;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Montserrat',sans-serif;background:var(--white);color:var(--black);overflow-x:hidden;}
+
+#navbar{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 4vw;height:68px;background:rgba(250,250,248,0.97);backdrop-filter:blur(12px);border-bottom:1px solid var(--grey-light);transition:box-shadow 0.3s,transform 0.35s ease;}
+#navbar.scrolled{box-shadow:0 4px 32px rgba(139,30,30,0.08);}
+.logo{display:flex;align-items:center;text-decoration:none;gap:10px;}
+.logo-img{height:52px;width:auto;display:block;object-fit:contain;}
+.logo-fallback{display:none;flex-direction:column;}
+.logo-text{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:600;color:var(--red);letter-spacing:0.06em;line-height:1;}
+.logo-sub{font-size:0.45rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--grey-dark);margin-top:2px;}
+.nav-links{display:flex;align-items:center;gap:1.8rem;list-style:none;}
+.nav-links a{font-size:0.66rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--grey-dark);text-decoration:none;transition:color 0.2s;}
+.nav-links a:hover,.nav-links a.active{color:var(--red);}
+.nav-cta{font-size:0.66rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--white);background:var(--red);padding:9px 18px;border:none;cursor:pointer;text-decoration:none;transition:background 0.2s;white-space:nowrap;}
+.nav-cta:hover{background:var(--red-dark);}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px;}
+.hamburger span{display:block;width:24px;height:2px;background:var(--red);transition:all 0.3s;}
+.mobile-menu{display:none;position:fixed;top:68px;left:0;right:0;background:var(--white);border-bottom:2px solid var(--red);padding:2rem 5vw;z-index:99;flex-direction:column;gap:1.2rem;}
+.mobile-menu.open{display:flex;}
+.mobile-menu a{font-size:0.8rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--grey-dark);text-decoration:none;padding:0.5rem 0;border-bottom:1px solid var(--grey-light);}
+
+.page-hero{padding:130px 8vw 80px;background:var(--off-white);border-bottom:1px solid var(--grey-light);position:relative;overflow:hidden;}
+.page-hero::before{content:'INSIGHTS';position:absolute;right:-2rem;top:50%;transform:translateY(-50%);font-family:'Cormorant Garamond',serif;font-size:18vw;font-weight:600;color:rgba(139,30,30,0.04);white-space:nowrap;pointer-events:none;line-height:1;}
+.section-tag{font-size:0.62rem;font-weight:700;letter-spacing:0.3em;text-transform:uppercase;color:var(--red);margin-bottom:1rem;display:flex;align-items:center;gap:10px;}
+.section-tag::before{content:'';display:block;width:28px;height:1px;background:var(--red);}
+.page-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2.8rem,5.5vw,5rem);font-weight:300;line-height:1.08;color:var(--black);margin-bottom:1.2rem;}
+.page-title em{font-style:italic;color:var(--red);}
+.page-subtitle{font-size:0.88rem;line-height:1.85;color:var(--grey-dark);max-width:600px;}
+
+.filter-bar{padding:1.6rem 8vw;border-bottom:1px solid var(--grey-light);background:var(--white);display:flex;align-items:center;gap:0.6rem;flex-wrap:wrap;position:sticky;top:68px;z-index:50;}
+.filter-label{font-size:0.58rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--grey-mid);margin-right:0.4rem;flex-shrink:0;}
+.filter-btn{font-size:0.6rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;padding:7px 16px;border:1px solid var(--grey-light);background:transparent;color:var(--grey-dark);cursor:pointer;transition:all 0.2s;font-family:'Montserrat',sans-serif;white-space:nowrap;}
+.filter-btn:hover{background:var(--off-white);border-color:var(--grey-mid);}
+.filter-btn.active{background:var(--red);color:var(--white);border-color:var(--red);}
+
+.articles-main{padding:60px 8vw 100px;}
+.articles-count{font-size:0.68rem;color:var(--grey-mid);letter-spacing:0.06em;margin-bottom:2.8rem;}
+.articles-count span{color:var(--black);font-weight:700;}
+
+.featured-strip{display:grid;grid-template-columns:1.4fr 1fr;gap:0;border:1px solid var(--grey-light);border-top:4px solid var(--red);margin-bottom:3.5rem;text-decoration:none;transition:box-shadow 0.3s,transform 0.3s;background:var(--white);}
+.featured-strip:hover{box-shadow:0 20px 60px rgba(139,30,30,0.13);transform:translateY(-4px);}
+.featured-img-wrap{overflow:hidden;height:100%;min-height:320px;}
+.featured-img-wrap img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.6s ease;}
+.featured-strip:hover .featured-img-wrap img{transform:scale(1.04);}
+.featured-img-placeholder{width:100%;height:100%;min-height:320px;background:linear-gradient(135deg,var(--grey-light) 0%,var(--grey-mid) 100%);display:flex;align-items:center;justify-content:center;}
+.featured-img-placeholder svg{width:40px;height:40px;color:var(--grey-dark);opacity:0.3;}
+.featured-body{padding:2.8rem 2.4rem;background:var(--off-white);display:flex;flex-direction:column;justify-content:center;gap:0;}
+.featured-eyebrow{display:flex;align-items:center;gap:1rem;margin-bottom:1rem;flex-wrap:wrap;}
+.featured-tag{font-size:0.58rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--white);background:var(--red);padding:5px 12px;}
+.featured-badge{font-size:0.58rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--grey-mid);}
+.featured-title{font-family:'Cormorant Garamond',serif;font-size:clamp(1.6rem,2.2vw,2.1rem);font-weight:600;color:var(--black);line-height:1.2;margin-bottom:0.9rem;}
+.featured-excerpt{font-size:0.84rem;line-height:1.85;color:var(--grey-dark);margin-bottom:1.4rem;text-align:justify;}
+.featured-footer{display:flex;align-items:center;justify-content:space-between;gap:0.8rem;flex-wrap:wrap;}
+.featured-meta{font-size:0.62rem;color:var(--grey-mid);}
+.read-more-arrow{display:inline-flex;align-items:center;gap:6px;font-size:0.62rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--red);transition:gap 0.2s;}
+.read-more-arrow:hover{gap:10px;}
+
+.articles-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;}
+
+.article-card{background:var(--white);border:1px solid var(--grey-light);border-top:3px solid var(--red);text-decoration:none;display:flex;flex-direction:column;transition:box-shadow 0.25s,transform 0.25s;}
+.article-card:hover{box-shadow:0 14px 44px rgba(139,30,30,0.11);transform:translateY(-4px);}
+.article-img-wrap{width:100%;height:200px;overflow:hidden;background:var(--grey-light);flex-shrink:0;}
+.article-img-wrap img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.5s ease;}
+.article-card:hover .article-img-wrap img{transform:scale(1.04);}
+.article-img-placeholder{width:100%;height:200px;background:linear-gradient(135deg,var(--grey-light) 0%,var(--off-white) 100%);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.article-img-placeholder svg{width:30px;height:30px;color:var(--grey-mid);opacity:0.5;}
+.article-body{padding:1.6rem 1.6rem 1.8rem;flex:1;display:flex;flex-direction:column;}
+.article-meta{display:flex;align-items:center;gap:0.8rem;margin-bottom:0.8rem;flex-wrap:wrap;}
+.article-cat{font-size:0.57rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--red);}
+.article-date{font-size:0.6rem;color:var(--grey-mid);}
+.article-title{font-family:'Cormorant Garamond',serif;font-size:1.32rem;font-weight:600;color:var(--black);line-height:1.28;margin-bottom:0.7rem;}
+.article-excerpt{font-size:0.77rem;line-height:1.75;color:var(--grey-dark);flex:1;}
+.article-footer{display:flex;align-items:center;justify-content:space-between;margin-top:1.1rem;padding-top:0.8rem;border-top:1px solid var(--grey-light);}
+.article-readtime{font-size:0.6rem;color:var(--grey-mid);}
+
+.empty-state{grid-column:1/-1;text-align:center;padding:5rem 0;}
+.empty-state p{font-size:0.85rem;color:var(--grey-mid);line-height:1.8;}
+
+.loading-state{grid-column:1/-1;text-align:center;padding:5rem 0;display:flex;justify-content:center;}
+.loading-dots{display:inline-flex;gap:6px;align-items:center;}
+.loading-dots span{width:8px;height:8px;background:var(--red);border-radius:50%;animation:dot-bounce 1.2s infinite;}
+.loading-dots span:nth-child(2){animation-delay:0.2s;}
+.loading-dots span:nth-child(3){animation-delay:0.4s;}
+@keyframes dot-bounce{0%,80%,100%{transform:scale(0.6);opacity:0.4;}40%{transform:scale(1);opacity:1;}}
+
+footer{background:var(--red-dark);background:#6B1414;padding:2.8rem 8vw 2rem;}
+.footer-bottom-simple{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;}
+.footer-copy{font-size:0.66rem;color:rgba(255,255,255,0.4);letter-spacing:0.05em;}
+.footer-addr{font-size:0.66rem;color:rgba(255,255,255,0.4);text-align:right;line-height:1.7;}
+
+.fade-up{opacity:0;transform:translateY(20px);transition:opacity 0.55s ease,transform 0.55s ease;}
+.fade-up.visible{opacity:1;transform:translateY(0);}
+
+@media(max-width:1100px){
+  .articles-grid{grid-template-columns:repeat(2,1fr);}
+}
+@media(max-width:900px){
+  .nav-links,.nav-cta{display:none !important;}
+  .hamburger{display:flex;}
+  .page-hero{padding:110px 6vw 60px;}
+  .filter-bar{padding:1.2rem 6vw;top:68px;}
+  .articles-main{padding:40px 6vw 70px;}
+  .featured-strip{grid-template-columns:1fr;}
+  .featured-img-wrap{min-height:260px;height:260px;}
+  .featured-img-placeholder{min-height:260px;}
+}
+@media(max-width:640px){
+  .articles-grid{grid-template-columns:1fr;}
+  .page-title{font-size:2.4rem;}
+}
+</style>
+</head>
+<body>
+
+<nav id="navbar" role="navigation" aria-label="Main navigation">
+  <a href="index.html" class="logo" aria-label="KMA — Home">
+    <img src="assets/logo.png" alt="KMA" class="logo-img" width="80" height="80" loading="eager" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+    <div class="logo-fallback">
+      <div class="logo-text">KMA</div>
+      <div class="logo-sub">Chartered Accountants</div>
+    </div>
+  </a>
+  <ul class="nav-links" role="list">
+    <li><a href="index.html#about">About</a></li>
+    <li><a href="index.html#services">Services</a></li>
+    <li><a href="index.html#global">Global</a></li>
+    <li><a href="index.html#team">Team</a></li>
+    <li><a href="articles.html" class="active">Insights</a></li>
+    <li><a href="index.html#careers">Careers</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+  </ul>
+  <a href="index.html#contact" class="nav-cta">Get in Touch</a>
+  <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="mobile-menu" id="mobile-menu">
+  <a href="index.html#about">About</a>
+  <a href="index.html#services">Services</a>
+  <a href="index.html#global">Global</a>
+  <a href="index.html#team">Team</a>
+  <a href="articles.html">Insights</a>
+  <a href="index.html#careers">Careers</a>
+  <a href="index.html#contact">Contact</a>
+</div>
+
+<div class="page-hero">
+  <p class="section-tag">Knowledge Centre</p>
+  <h1 class="page-title">Insights &amp; <em>Articles</em></h1>
+  <p class="page-subtitle" id="hero-subtitle">Perspectives on taxation, audit, GST, transfer pricing, and financial advisory — written by KMA's partners for practitioners and business leaders.</p>
+</div>
+
+<div class="filter-bar" id="filter-bar" role="navigation" aria-label="Article categories">
+  <span class="filter-label">Filter:</span>
+  <button class="filter-btn active" data-cat="all">All</button>
+</div>
+
+<main class="articles-main" id="main-content">
+  <div class="articles-count" id="articles-count" aria-live="polite"></div>
+  <div id="featured-wrap"></div>
+  <div class="articles-grid" id="articles-grid" role="list">
+    <div class="loading-state" aria-label="Loading articles">
+      <div class="loading-dots"><span></span><span></span><span></span></div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="footer-bottom-simple">
+    <div class="footer-copy" id="footer-copy"></div>
+    <address class="footer-addr" id="footer-addr"></address>
+  </div>
+</footer>
+
+<script>
+function esc(s){
+  if(s==null)return'';
+  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;');
+}
+
+function parseFrontmatter(raw){
+  const match=raw.match(/^---\n([\s\S]*?)\n---/);
+  if(!match)return null;
+  const meta={};
+  match[1].split('\n').forEach(line=>{
+    const idx=line.indexOf(':');
+    if(idx===-1)return;
+    const key=line.slice(0,idx).trim();
+    const val=line.slice(idx+1).trim();
+    meta[key]=val;
+  });
+  return meta;
+}
+
+async function discoverArticleSlugs(){
+  let slugs=[];
+  try{
+    const res=await fetch('articles/index.json');
+    if(res.ok){const data=await res.json();slugs=data.slugs||data||[];}
+  }catch(e){}
+  if(slugs.length>0)return slugs;
+  const fallback=[
+    'beps-2-indian-multinationals','virtual-cfo-vs-fulltime-cfo','gst-itc-pitfalls',
+    'apa-negotiations-guide','fema-compliance-offshore-funding','icfr-reporting-ind-as',
+    'cross-border-ma-india','permanent-establishment-risk'
+  ];
+  return fallback;
+}
+
+async function fetchArticleMeta(slug){
+  try{
+    const res=await fetch(`articles/${slug}.md`);
+    if(!res.ok)return null;
+    const text=await res.text();
+    const meta=parseFrontmatter(text);
+    if(!meta)return null;
+    meta.slug=slug;
+    return meta;
+  }catch(e){return null;}
+}
+
+let allArticles=[];
+let activeFilter='all';
+let siteConfig={};
+
+function getCategories(articles){
+  const cats=new Set(articles.map(a=>a.category).filter(Boolean));
+  return Array.from(cats).sort();
+}
+
+function buildFilterBar(articles){
+  const bar=document.getElementById('filter-bar');
+  const cats=getCategories(articles);
+  cats.forEach(cat=>{
+    const btn=document.createElement('button');
+    btn.className='filter-btn';
+    btn.dataset.cat=cat;
+    btn.textContent=cat;
+    btn.setAttribute('aria-label',`Filter by ${cat}`);
+    btn.addEventListener('click',()=>setFilter(cat));
+    bar.appendChild(btn);
+  });
+}
+
+function setFilter(cat){
+  activeFilter=cat;
+  document.querySelectorAll('.filter-btn').forEach(b=>{
+    b.classList.toggle('active',b.dataset.cat===cat);
+  });
+  renderArticles();
+}
+
+const PLACEHOLDER_SVG=`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>`;
+
+function buildFeaturedCard(article){
+  const imgHTML=article.cover
+    ?`<div class="featured-img-wrap"><img src="${esc(article.cover)}" alt="${esc(article.title)}" loading="lazy"></div>`
+    :`<div class="featured-img-wrap featured-img-placeholder">${PLACEHOLDER_SVG}</div>`;
+  return`
+  <a class="featured-strip fade-up" href="article.html?slug=${esc(article.slug)}" role="listitem" aria-label="Featured: ${esc(article.title)}">
+    ${imgHTML}
+    <div class="featured-body">
+      <div class="featured-eyebrow">
+        ${article.category?`<span class="featured-tag">${esc(article.category)}</span>`:''}
+        <span class="featured-badge">Featured</span>
+      </div>
+      <div class="featured-title">${esc(article.title)}</div>
+      <p class="featured-excerpt">${esc(article.excerpt||'')}</p>
+      <div class="featured-footer">
+        <span class="featured-meta">${esc(article.date||'')}${article.readTime?' &middot; '+esc(article.readTime):''}</span>
+        <span class="read-more-arrow">Read Article <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+      </div>
+    </div>
+  </a>`;
+}
+
+function buildCard(article){
+  const imgHTML=article.cover
+    ?`<div class="article-img-wrap"><img src="${esc(article.cover)}" alt="${esc(article.title)}" loading="lazy"></div>`
+    :`<div class="article-img-placeholder">${PLACEHOLDER_SVG}</div>`;
+  return`
+  <a class="article-card fade-up" href="article.html?slug=${esc(article.slug)}" role="listitem">
+    ${imgHTML}
+    <div class="article-body">
+      <div class="article-meta">
+        ${article.category?`<span class="article-cat">${esc(article.category)}</span>`:''}
+        ${article.date?`<span class="article-date">${esc(article.date)}</span>`:''}
+      </div>
+      <h2 class="article-title">${esc(article.title)}</h2>
+      <p class="article-excerpt">${esc(article.excerpt||'')}</p>
+      <div class="article-footer">
+        <span class="read-more-arrow">Read More <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        ${article.readTime?`<span class="article-readtime">${esc(article.readTime)}</span>`:''}
+      </div>
+    </div>
+  </a>`;
+}
+
+function renderArticles(){
+  const filtered=activeFilter==='all'?allArticles:allArticles.filter(a=>a.category===activeFilter);
+  const countEl=document.getElementById('articles-count');
+  countEl.innerHTML=`Showing <span>${filtered.length}</span> article${filtered.length!==1?'s':''}`;
+
+  const featured=filtered.find(a=>a.featured==='true'||a.featured===true);
+  const rest=filtered.filter(a=>a!==featured);
+
+  document.getElementById('featured-wrap').innerHTML=featured?buildFeaturedCard(featured):'';
+
+  const grid=document.getElementById('articles-grid');
+  if(rest.length===0&&!featured){
+    grid.innerHTML=`<div class="empty-state"><p>No articles found in this category yet.</p></div>`;
+  }else{
+    grid.innerHTML=rest.map(a=>buildCard(a)).join('');
+  }
+  initFadeUp();
+}
+
+function initFadeUp(){
+  const obs=new IntersectionObserver(entries=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){setTimeout(()=>e.target.classList.add('visible'),80);obs.unobserve(e.target);}
+    });
+  },{threshold:0.08});
+  document.querySelectorAll('.fade-up:not(.visible)').forEach(el=>obs.observe(el));
+}
+
+function initNavbar(){
+  const nb=document.getElementById('navbar');
+  window.addEventListener('scroll',()=>{nb.classList.toggle('scrolled',window.scrollY>40);},{passive:true});
+}
+
+function initHamburger(){
+  const btn=document.getElementById('hamburger');
+  const menu=document.getElementById('mobile-menu');
+  btn.addEventListener('click',()=>{
+    const open=menu.classList.toggle('open');
+    btn.setAttribute('aria-expanded',String(open));
+  });
+  menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
+    menu.classList.remove('open');
+    btn.setAttribute('aria-expanded','false');
+  }));
+}
+
+async function init(){
+  initNavbar();
+  initHamburger();
+
+  let cfg={};
+  try{
+    const res=await fetch('config.json');
+    if(res.ok)cfg=await res.json();
+  }catch(e){}
+
+  const site=cfg.site||{};
+  const addr=site.address||{};
+  document.getElementById('footer-copy').textContent=`© ${new Date().getFullYear()} ${site.name||'Kamesh Mali & Associates'} · All Rights Reserved`;
+  const addrEl=document.getElementById('footer-addr');
+  if(addr.line1)addrEl.innerHTML=`${esc(addr.line1)}, ${esc(addr.line2||'')}<br>${esc(addr.city||'')} – ${esc(addr.pin||'')}, ${esc(addr.state||'')}`;
+
+  if(site.name){
+    document.title=`Insights & Articles — ${site.name}`;
+    document.querySelector('meta[name="description"]').content=`Expert perspectives on taxation, audit, GST, transfer pricing, and financial advisory from ${site.name} — Chartered Accountants.`;
+    document.querySelector('meta[property="og:title"]').content=`Insights & Articles — ${site.name}`;
+  }
+
+  const slugs=await discoverArticleSlugs();
+  const results=await Promise.all(slugs.map(s=>fetchArticleMeta(s)));
+  allArticles=results.filter(Boolean);
+
+  if(allArticles.length===0){
+    document.getElementById('articles-grid').innerHTML=`<div class="empty-state"><p>Articles are being prepared. Check back soon.</p></div>`;
+    return;
+  }
+
+  buildFilterBar(allArticles);
+  renderArticles();
+}
+
+init();
+</script>
+</body>
+</html>
