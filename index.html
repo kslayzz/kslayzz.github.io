@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Kamesh Mali & Associates — Chartered Accountants</title>
-<meta name="description" content="KMA is a Pune-based Chartered Accountancy firm offering audit, tax, GST, transfer pricing, Virtual CFO, and international advisory.">
+<meta name="description" content="KMA is a technology-enabled CA firm delivering end-to-end financial, audit, tax, and advisory solutions — built on accuracy, honesty, and deep expertise.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Kamesh Mali & Associates — Chartered Accountants">
 <meta property="og:description" content="KMA is a technology-enabled CA firm delivering end-to-end financial, audit, tax, and advisory solutions — built on accuracy, honesty, and deep expertise.">
@@ -416,6 +416,11 @@ footer{background:var(--red-dark);padding:3rem 8vw 2rem;}
 </div>
 
 <script>
+const CACHE_KEY='kma_site_data';
+const CACHE_TS_KEY='kma_site_ts';
+const CACHE_TTL=24*60*60*1000;
+const API_URL='YOUR_APPS_SCRIPT_WEB_APP_URL';
+
 const SVC_ICONS=[
   `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>`,
   `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>`,
@@ -440,63 +445,41 @@ function esc(s){
   return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;');
 }
 
-function parseFrontmatter(raw){
-  const match=raw.match(/^---\n([\s\S]*?)\n---/);
-  if(!match)return null;
-  const meta={};
-  match[1].split('\n').forEach(line=>{
-    const idx=line.indexOf(':');
-    if(idx===-1)return;
-    const key=line.slice(0,idx).trim();
-    const val=line.slice(idx+1).trim();
-    meta[key]=val;
-  });
-  return meta;
-}
-
-async function discoverArticleSlugs(){
+async function loadData(){
   try{
-    const res=await fetch('articles/index.json');
-    if(res.ok){const d=await res.json();return d.slugs||d||[];}
+    const cached=localStorage.getItem(CACHE_KEY);
+    const ts=parseInt(localStorage.getItem(CACHE_TS_KEY)||'0',10);
+    if(cached&&(Date.now()-ts<CACHE_TTL)){
+      return JSON.parse(cached);
+    }
   }catch(e){}
-  return[
-    'beps-2-indian-multinationals','virtual-cfo-vs-fulltime-cfo','gst-itc-pitfalls',
-    'apa-negotiations-guide','fema-compliance-offshore-funding','icfr-reporting-ind-as',
-    'cross-border-ma-india','permanent-establishment-risk'
-  ];
-}
 
-async function loadFeaturedArticles(){
-  const slugs=await discoverArticleSlugs();
-  const results=await Promise.all(slugs.map(async slug=>{
-    try{
-      const res=await fetch(`articles/${slug}.md`);
-      if(!res.ok)return null;
-      const text=await res.text();
-      const meta=parseFrontmatter(text);
-      if(!meta)return null;
-      meta.slug=slug;
-      return meta;
-    }catch(e){return null;}
-  }));
-  return results.filter(m=>m&&(m.featured==='true'||m.featured===true)).slice(0,3);
+  const res=await fetch(API_URL);
+  if(!res.ok)throw new Error('API error');
+  const data=await res.json();
+
+  try{
+    localStorage.setItem(CACHE_KEY,JSON.stringify(data));
+    localStorage.setItem(CACHE_TS_KEY,String(Date.now()));
+  }catch(e){}
+
+  return data;
 }
 
 async function init(){
   let cfg;
   try{
-    const res=await fetch('config.json?v='+Date.now());
-    cfg=await res.json();
+    cfg=await loadData();
   }catch(e){
-    console.error('Failed to load config.json',e);
+    console.error('Failed to load site data',e);
+    document.getElementById('main-content').innerHTML='<div style="padding:200px 8vw;text-align:center;font-size:0.9rem;color:#5A534C;">Content is loading. Please refresh.</div>';
     return;
   }
 
-  const{site,hero,about,services,global:glob,team,vision,careers,contact}=cfg;
+  const{site,hero,about,services,global:glob,team,vision,careers,contact,articles}=cfg;
 
   document.title=`${site.name} — ${site.tagline}`;
-  const metaDesc=document.querySelector('meta[name="description"]');
-  if(metaDesc)metaDesc.content=site.description;
+  document.querySelector('meta[name="description"]').content=site.description;
   document.querySelector('meta[property="og:title"]').content=`${site.name} — ${site.tagline}`;
   document.querySelector('meta[property="og:description"]').content=site.description;
   document.body.dataset.email=site.email;
@@ -513,7 +496,7 @@ async function init(){
     "telephone":site.phone,"email":site.email
   });
 
-  const featured=await loadFeaturedArticles();
+  const featured=(articles||[]).filter(a=>a.featured).slice(0,3);
 
   document.getElementById('main-content').innerHTML=
     buildHero(hero,site)+
@@ -541,7 +524,7 @@ async function init(){
 }
 
 function buildHero(h,site){
-  const stats=h.stats.map(s=>
+  const stats=(h.stats||[]).map(s=>
     `<div><div class="stat-num">${esc(s.num)}</div><div class="stat-label">${esc(s.label)}</div></div>`
   ).join('');
   return`
@@ -571,7 +554,7 @@ function buildMarquee(services){
 }
 
 function buildAbout(a){
-  const pillars=a.pillars.map(p=>
+  const pillars=(a.pillars||[]).map(p=>
     `<div class="pillar"><div class="pillar-title">${esc(p.title)}</div><div class="pillar-desc">${esc(p.desc)}</div></div>`
   ).join('');
   const titleParts=esc(a.heading).replace(esc(a.headingEm),`<em>${esc(a.headingEm)}</em>`);
@@ -592,7 +575,7 @@ function buildAbout(a){
 }
 
 function buildServices(services){
-  const cards=services.map((s,i)=>`
+  const cards=(services||[]).map((s,i)=>`
     <article class="service-card fade-up">
       <div class="service-card-inner">
         <span class="service-num">${esc(s.num)}</span>
@@ -600,7 +583,7 @@ function buildServices(services){
         <h3 class="service-name">${esc(s.name)}</h3>
         <div class="service-divider" aria-hidden="true"></div>
         <p class="service-desc">${esc(s.desc)}</p>
-        <div class="service-tags">${s.tags.map(t=>`<span class="service-tag">${esc(t)}</span>`).join('')}</div>
+        <div class="service-tags">${(s.tags||[]).map(t=>`<span class="service-tag">${esc(t)}</span>`).join('')}</div>
       </div>
     </article>`).join('');
   return`
@@ -628,7 +611,7 @@ function buildServices(services){
 }
 
 function buildGlobal(g){
-  const chips=g.countries.map(c=>
+  const chips=(g.countries||[]).map(c=>
     `<div class="country-chip">${c.flag} ${esc(c.name)}</div>`).join('');
   return`
   <section class="global" id="global" aria-labelledby="global-title">
@@ -645,7 +628,7 @@ function buildGlobal(g){
 }
 
 function buildTeam(team){
-  const cards=team.map(m=>`
+  const cards=(team||[]).map(m=>`
     <article class="team-card fade-up">
       <div class="team-img-wrap">
         <img src="${esc(m.photo)}" alt="${esc(m.name)}" loading="lazy">
@@ -677,7 +660,7 @@ function buildTeam(team){
 }
 
 function buildVision(v){
-  const values=v.values.map(val=>`
+  const values=(v.values||[]).map(val=>`
     <div class="vision-value">
       <div class="vision-value-title">${esc(val.title)}</div>
       <div class="vision-value-desc">${esc(val.desc)}</div>
@@ -727,7 +710,7 @@ function buildArticles(featured){
 }
 
 function buildCareers(careers,contact,site){
-  const tracks=careers.tracks.map((t,i)=>`
+  const tracks=(careers.tracks||[]).map((t,i)=>`
     <div class="career-track fade-up">
       <div class="track-icon" aria-hidden="true">${TRACK_ICONS[i]||TRACK_ICONS[0]}</div>
       <h3 class="track-title">${esc(t.title)}</h3>
@@ -779,7 +762,7 @@ function buildCareers(careers,contact,site){
 }
 
 function buildCTA(contact,site){
-  const partnerItems=contact.partners.map(p=>`
+  const partnerItems=(contact.partners||[]).map(p=>`
     <div class="contact-item">
       <div class="contact-label">${esc(p.label)}</div>
       <div class="contact-name">${esc(p.name)}</div>
@@ -820,7 +803,7 @@ function buildFooter(site){
     instagram:`<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>`,
     twitter:`<svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>`
   };
-  const socials=Object.entries(site.socialLinks).map(([k,u])=>
+  const socials=Object.entries(site.socialLinks||{}).map(([k,u])=>
     `<a href="${esc(u)}" class="social-link" rel="noopener noreferrer">${svgs[k]||''} ${k.charAt(0).toUpperCase()+k.slice(1)}</a>`
   ).join('');
   return`

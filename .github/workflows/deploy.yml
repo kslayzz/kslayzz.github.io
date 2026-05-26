@@ -1,0 +1,38 @@
+name: Deploy KMA Website
+
+on:
+  push:
+    branches: [main]
+  repository_dispatch:
+    types: [sheet-updated]
+  schedule:
+    - cron: "0 2 * * *"
+  workflow_dispatch:
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Fetch data from Apps Script
+        run: |
+          mkdir -p data
+          curl -L "${{ secrets.APPS_SCRIPT_URL }}" -o data/site.json
+          if [ ! -s data/site.json ]; then
+            echo "Failed to fetch site data" && exit 1
+          fi
+
+      - name: Validate JSON
+        run: |
+          python3 -c "import json,sys; json.load(open('data/site.json'))" || (echo "Invalid JSON" && exit 1)
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: .
+          exclude_assets: ".github"
+          keep_files: false
