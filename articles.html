@@ -30,7 +30,7 @@
 html{scroll-behavior:smooth;}
 body{font-family:'Montserrat',sans-serif;background:var(--white);color:var(--black);overflow-x:hidden;}
 
-#navbar{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 4vw;height:68px;background:rgba(250,250,248,0.97);backdrop-filter:blur(12px);border-bottom:1px solid var(--grey-light);transition:box-shadow 0.3s,transform 0.35s ease;}
+#navbar{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 4vw;height:68px;background:rgba(250,250,248,0.97);backdrop-filter:blur(12px);border-bottom:1px solid var(--grey-light);transition:box-shadow 0.3s;}
 #navbar.scrolled{box-shadow:0 4px 32px rgba(139,30,30,0.08);}
 .logo{display:flex;align-items:center;text-decoration:none;gap:10px;}
 .logo-img{height:52px;width:auto;display:block;object-fit:contain;}
@@ -76,17 +76,25 @@ body{font-family:'Montserrat',sans-serif;background:var(--white);color:var(--bla
 .article-outer{padding:60px 8vw 90px;}
 .article-layout{display:grid;grid-template-columns:1fr 310px;gap:5rem;max-width:1360px;margin:0 auto;}
 .article-body{min-width:0;}
+
 .article-body h1{font-family:'Cormorant Garamond',serif;font-size:2.4rem;font-weight:300;line-height:1.15;color:var(--black);margin:2.2rem 0 1rem;}
 .article-body h2{font-family:'Cormorant Garamond',serif;font-size:1.9rem;font-weight:600;line-height:1.18;color:var(--black);margin:2.8rem 0 1rem;padding-bottom:0.6rem;border-bottom:1px solid var(--grey-light);}
 .article-body h3{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:600;color:var(--black);margin:2rem 0 0.7rem;}
 .article-body h4{font-size:0.76rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--red);margin:1.6rem 0 0.6rem;}
+.article-body h5{font-size:0.82rem;font-weight:700;color:var(--black);margin:1.4rem 0 0.5rem;}
+.article-body h6{font-size:0.78rem;font-weight:600;color:var(--grey-dark);margin:1.2rem 0 0.4rem;}
 .article-body p{font-size:0.94rem;line-height:2;color:var(--grey-dark);margin-bottom:1.2rem;text-align:justify;}
 .article-body strong{color:var(--black);font-weight:700;}
 .article-body em{font-style:italic;}
 .article-body a{color:var(--red);text-decoration:none;border-bottom:1px solid rgba(139,30,30,0.3);transition:border-color 0.2s;}
 .article-body a:hover{border-color:var(--red);}
-.article-body ul,.article-body ol{margin:0.8rem 0 1.3rem 1.6rem;}
-.article-body li{font-size:0.92rem;line-height:1.9;color:var(--grey-dark);margin-bottom:0.35rem;}
+.article-body ul{margin:0.8rem 0 1.3rem 0;padding:0;list-style:none;}
+.article-body ul li{font-size:0.92rem;line-height:1.9;color:var(--grey-dark);margin-bottom:0.45rem;padding-left:1.4rem;position:relative;}
+.article-body ul li::before{content:'';position:absolute;left:0;top:0.72em;width:6px;height:6px;background:var(--red);border-radius:50%;}
+.article-body ol{margin:0.8rem 0 1.3rem 0;padding:0;list-style:none;counter-reset:ol-counter;}
+.article-body ol li{font-size:0.92rem;line-height:1.9;color:var(--grey-dark);margin-bottom:0.45rem;padding-left:2rem;position:relative;counter-increment:ol-counter;}
+.article-body ol li::before{content:counter(ol-counter) ".";position:absolute;left:0;top:0;font-size:0.78rem;font-weight:700;color:var(--red);min-width:1.5rem;}
+.article-body ul ul,.article-body ol ul,.article-body ul ol,.article-body ol ol{margin:0.3rem 0 0.3rem 1rem;}
 .article-body blockquote{border-left:3px solid var(--red);padding:1.1rem 1.6rem;margin:2rem 0;background:var(--off-white);}
 .article-body blockquote p{margin:0;font-style:italic;font-family:'Cormorant Garamond',serif;font-size:1.15rem;color:var(--black);text-align:left;}
 .article-body hr{border:none;border-top:1px solid var(--grey-light);margin:2.8rem 0;}
@@ -95,8 +103,9 @@ body{font-family:'Montserrat',sans-serif;background:var(--white);color:var(--bla
 .article-body td{padding:11px 15px;border-bottom:1px solid var(--grey-light);color:var(--grey-dark);line-height:1.65;}
 .article-body tr:nth-child(even) td{background:var(--off-white);}
 .article-body code{font-family:monospace;font-size:0.82rem;background:var(--off-white);padding:2px 6px;border:1px solid var(--grey-light);}
-.article-body pre{background:var(--black);padding:1.4rem 1.6rem;overflow-x:auto;margin:1.4rem 0;}
-.article-body pre code{background:none;border:none;color:rgba(255,255,255,0.85);font-size:0.82rem;}
+.article-body pre{background:var(--black);padding:1.4rem 1.6rem;overflow-x:auto;margin:1.4rem 0;border-radius:2px;}
+.article-body pre code{background:none;border:none;color:rgba(255,255,255,0.85);font-size:0.82rem;padding:0;}
+.article-body img{max-width:100%;height:auto;display:block;margin:1.6rem 0;}
 
 .article-sidebar{position:sticky;top:88px;height:fit-content;display:flex;flex-direction:column;gap:1.4rem;}
 .sidebar-card{background:var(--off-white);border:1px solid var(--grey-light);border-top:3px solid var(--red);padding:1.6rem;}
@@ -111,7 +120,7 @@ body{font-family:'Montserrat',sans-serif;background:var(--white);color:var(--bla
 .toc-list li{border-bottom:1px solid var(--grey-light);}
 .toc-list li:last-child{border-bottom:none;}
 .toc-list a{font-size:0.72rem;color:var(--grey-dark);text-decoration:none;transition:color 0.2s;line-height:1.5;display:block;padding:0.5rem 0;}
-.toc-list a:hover{color:var(--red);}
+.toc-list a:hover,.toc-list a.active{color:var(--red);}
 .toc-h3{padding-left:0.9rem;font-size:0.68rem;}
 .share-sidebar{display:flex;flex-direction:column;gap:0.5rem;}
 
@@ -218,69 +227,155 @@ async function loadData(){
   return data;
 }
 
-function parseMarkdown(md){
-  const lines=md.split('\n');
-  let html='',inTable=false,tableRows=[],inCode=false,codeLines=[],inList=false,listType='',listItems=[];
-  function flushList(){
-    if(!inList)return;
-    html+=`<${listType}>${listItems.map(i=>`<li>${parseLine(i)}</li>`).join('')}</${listType}>`;
-    inList=false;listItems=[];listType='';
-  }
-  function flushTable(){
-    if(!inTable)return;
-    let t='<table>';
-    tableRows.forEach((r,i)=>{
-      const cells=r.split('|').map(c=>c.trim()).filter((_,ci,a)=>ci>0&&ci<a.length-1);
-      if(i===0)t+=`<thead><tr>${cells.map(c=>`<th>${parseLine(c)}</th>`).join('')}</tr></thead><tbody>`;
-      else if(i===1){}
-      else t+=`<tr>${cells.map(c=>`<td>${parseLine(c)}</td>`).join('')}</tr>`;
-    });
-    t+='</tbody></table>';html+=t;inTable=false;tableRows=[];
-  }
-  function parseLine(s){
-    s=s.replace(/\*\*(.+?)\*\*/g,'<strong>$1</strong>');
-    s=s.replace(/\*(.+?)\*/g,'<em>$1</em>');
-    s=s.replace(/`(.+?)`/g,'<code>$1</code>');
-    s=s.replace(/\[([^\]]+)\]\(([^)]+)\)/g,'<a href="$2">$1</a>');
+function parseMarkdown(raw){
+  if(!raw)return'';
+
+  const lines=raw.split('\n');
+  let html='';
+  let i=0;
+
+  function parseInline(s){
+    s=s
+      .replace(/!\[([^\]]*)\]\(([^)]+)\)/g,'<img src="$2" alt="$1">')
+      .replace(/\[([^\]]+)\]\(([^)]+)\)/g,'<a href="$2">$1</a>')
+      .replace(/\*\*\*(.+?)\*\*\*/g,'<strong><em>$1</em></strong>')
+      .replace(/___(.+?)___/g,'<strong><em>$1</em></strong>')
+      .replace(/\*\*(.+?)\*\*/g,'<strong>$1</strong>')
+      .replace(/__(.+?)__/g,'<strong>$1</strong>')
+      .replace(/\*([^*]+?)\*/g,'<em>$1</em>')
+      .replace(/_([^_]+?)_/g,'<em>$1</em>')
+      .replace(/~~(.+?)~~/g,'<del>$1</del>')
+      .replace(/`([^`]+?)`/g,'<code>$1</code>');
     return s;
   }
-  for(let i=0;i<lines.length;i++){
-    const l=lines[i];
-    if(l.startsWith('```')){
-      if(!inCode){inCode=true;codeLines=[];}
-      else{flushList();flushTable();html+=`<pre><code>${codeLines.map(c=>esc(c)).join('\n')}</code></pre>`;inCode=false;codeLines=[];}
+
+  function slugify(s){
+    return s.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
+  }
+
+  function peekListType(line){
+    if(/^(\s*)[-*+]\s/.test(line))return'ul';
+    if(/^(\s*)\d+[.)]\s/.test(line))return'ol';
+    return null;
+  }
+
+  function getIndent(line){
+    return(line.match(/^(\s*)/)||['',''])[1].length;
+  }
+
+  function parseList(lines,start,baseIndent){
+    const type=peekListType(lines[start]);
+    let out=`<${type}>`;
+    let idx=start;
+    while(idx<lines.length){
+      const line=lines[idx];
+      if(!line.trim()){idx++;continue;}
+      const indent=getIndent(line);
+      const lt=peekListType(line);
+      if(!lt||indent<baseIndent)break;
+      if(indent>baseIndent&&lt){
+        const nested=parseList(lines,idx,indent);
+        out=out.slice(0,-5)+nested+`</${type}>`;
+        idx=nested._end;
+        out+=`</${type}>`;
+        out=out.slice(0,-`</${type}>`.length*2)+`</${type}>`;
+        const sub=parseList(lines,idx,indent);
+        out=out.replace(/<\/li>\s*$/,sub.html+'</li>');
+        idx=sub._end;
+        continue;
+      }
+      const text=line.replace(/^\s*[-*+]\s/,'').replace(/^\s*\d+[.)]\s/,'');
+      out+=`<li>${parseInline(text)}`;
+      idx++;
+      if(idx<lines.length&&peekListType(lines[idx])&&getIndent(lines[idx])>indent){
+        const sub=parseList(lines,idx,getIndent(lines[idx]));
+        out+=sub.html;
+        idx=sub._end;
+      }
+      out+='</li>';
+    }
+    out+=`</${type}>`;
+    return{html:out,_end:idx};
+  }
+
+  while(i<lines.length){
+    const line=lines[i];
+
+    if(line.startsWith('```')){
+      const lang=line.slice(3).trim();
+      i++;
+      const codeLines=[];
+      while(i<lines.length&&!lines[i].startsWith('```')){
+        codeLines.push(lines[i]);
+        i++;
+      }
+      i++;
+      const codeEsc=codeLines.map(l=>l.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')).join('\n');
+      html+=`<pre><code${lang?` class="language-${lang}"`:''}>${codeEsc}</code></pre>`;
       continue;
     }
-    if(inCode){codeLines.push(l);continue;}
-    if(l.includes('|')&&l.trim().startsWith('|')){
-      flushList();
-      if(l.replace(/[\s|:-]/g,'').length===0){tableRows.push(l);continue;}
-      inTable=true;tableRows.push(l);continue;
-    }else{flushTable();}
-    if(/^[-*]\s/.test(l)){
-      if(!inList){inList=true;listType='ul';}
-      listItems.push(l.replace(/^[-*]\s/,''));continue;
-    }else if(/^\d+\.\s/.test(l)){
-      if(!inList){inList=true;listType='ol';}
-      listItems.push(l.replace(/^\d+\.\s/,''));continue;
-    }else{flushList();}
-    if(/^#{1,6}\s/.test(l)){
-      const m=l.match(/^(#{1,6})\s(.+)/);
-      const lvl=m[1].length;
-      const txt=parseLine(m[2]);
-      const id=m[2].toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
-      html+=`<h${lvl} id="${id}">${txt}</h${lvl}>`;
-    }else if(l.startsWith('> ')){
-      html+=`<blockquote><p>${parseLine(l.slice(2))}</p></blockquote>`;
-    }else if(l.trim()==='---'||l.trim()==='***'){
-      html+='<hr>';
-    }else if(l.trim()===''){
-      html+='';
-    }else{
-      html+=`<p>${parseLine(l)}</p>`;
+
+    if(/^\s*\|/.test(line)&&line.includes('|')){
+      const tableLines=[];
+      while(i<lines.length&&/^\s*\|/.test(lines[i])&&lines[i].includes('|')){
+        tableLines.push(lines[i]);
+        i++;
+      }
+      let thead='',tbody='',headerDone=false;
+      tableLines.forEach((tl,ti)=>{
+        if(/^[\s|:-]+$/.test(tl)){headerDone=true;return;}
+        const cells=tl.split('|').map(c=>c.trim()).filter((_,ci,a)=>ci>0&&ci<a.length-1);
+        if(!headerDone&&ti===0){
+          thead=`<thead><tr>${cells.map(c=>`<th>${parseInline(c)}</th>`).join('')}</tr></thead>`;
+        }else{
+          tbody+=`<tr>${cells.map(c=>`<td>${parseInline(c)}</td>`).join('')}</tr>`;
+        }
+      });
+      html+=`<table>${thead}<tbody>${tbody}</tbody></table>`;
+      continue;
     }
+
+    if(peekListType(line)){
+      const res=parseList(lines,i,getIndent(line));
+      html+=res.html;
+      i=res._end;
+      continue;
+    }
+
+    if(/^#{1,6}\s/.test(line)){
+      const m=line.match(/^(#{1,6})\s+(.+)/);
+      if(m){
+        const lvl=m[1].length;
+        const txt=parseInline(m[2].trim());
+        const id=slugify(m[2].trim());
+        html+=`<h${lvl} id="${id}">${txt}</h${lvl}>`;
+      }
+      i++;continue;
+    }
+
+    if(/^>\s?/.test(line)){
+      const bqLines=[];
+      while(i<lines.length&&/^>\s?/.test(lines[i])){
+        bqLines.push(lines[i].replace(/^>\s?/,''));
+        i++;
+      }
+      html+=`<blockquote><p>${parseInline(bqLines.join(' '))}</p></blockquote>`;
+      continue;
+    }
+
+    if(/^[-*_]{3,}$/.test(line.trim())){
+      html+='<hr>';
+      i++;continue;
+    }
+
+    if(line.trim()===''){
+      i++;continue;
+    }
+
+    html+=`<p>${parseInline(line.trim())}</p>`;
+    i++;
   }
-  flushList();flushTable();
+
   return html;
 }
 
@@ -290,10 +385,29 @@ function buildTOC(html){
   const headings=tmp.querySelectorAll('h2,h3');
   if(headings.length<2)return'';
   const items=Array.from(headings).map(h=>{
-    const cls=h.tagName==='H3'?'toc-h3':'';
-    return`<li><a href="#${h.id}" class="${cls}">${h.textContent}</a></li>`;
+    const cls=h.tagName==='H3'?' class="toc-h3"':'';
+    return`<li><a href="#${h.id}"${cls}>${h.textContent}</a></li>`;
   }).join('');
   return`<div class="sidebar-card"><div class="sidebar-label">In This Article</div><ul class="toc-list">${items}</ul></div>`;
+}
+
+function initTOCHighlight(){
+  const links=document.querySelectorAll('.toc-list a');
+  if(!links.length)return;
+  const headingIds=Array.from(links).map(a=>a.getAttribute('href').slice(1));
+  const observer=new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        links.forEach(a=>a.classList.remove('active'));
+        const link=document.querySelector(`.toc-list a[href="#${entry.target.id}"]`);
+        if(link)link.classList.add('active');
+      }
+    });
+  },{rootMargin:'-68px 0px -70% 0px'});
+  headingIds.forEach(id=>{
+    const el=document.getElementById(id);
+    if(el)observer.observe(el);
+  });
 }
 
 function buildShareButtons(title,url){
@@ -361,6 +475,13 @@ function copyLink(){
   });
 }
 
+function formatDate(raw){
+  if(!raw)return'';
+  const d=new Date(raw);
+  if(isNaN(d.getTime()))return raw;
+  return d.toLocaleDateString('en-IN',{day:'numeric',month:'long',year:'numeric'});
+}
+
 function initProgressBar(){
   const bar=document.getElementById('progress-bar');
   window.addEventListener('scroll',()=>{
@@ -422,6 +543,7 @@ async function loadArticle(cfg){
   const coverHTML=article.cover?`<div class="article-cover-wrap"><img src="${esc(article.cover)}" alt="${esc(article.title)}" class="article-cover" loading="lazy"></div>`:'';
   const shareHero=buildShareButtons(article.title||'KMA Article',pageUrl);
   const shareSidebar=buildShareSidebar(article.title||'KMA Article',pageUrl);
+  const displayDate=formatDate(article.date);
 
   container.innerHTML=`
     <article>
@@ -432,7 +554,7 @@ async function loadArticle(cfg){
         </a>
         <div class="article-meta-row">
           ${article.category?`<span class="article-cat-badge">${esc(article.category)}</span>`:''}
-          ${article.date?`<span class="article-date-badge">${esc(article.date)}</span>`:''}
+          ${displayDate?`<span class="article-date-badge">${esc(displayDate)}</span>`:''}
           ${article.readTime?`<span class="article-read-badge">${esc(article.readTime)}</span>`:''}
         </div>
         <h1 class="article-hero-title">${esc(article.title||'Untitled')}</h1>
@@ -474,6 +596,8 @@ async function loadArticle(cfg){
       </div>
     </article>
   `;
+
+  requestAnimationFrame(()=>initTOCHighlight());
 }
 
 function initNavbar(){
