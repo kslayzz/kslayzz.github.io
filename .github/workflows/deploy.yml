@@ -6,7 +6,7 @@ on:
   repository_dispatch:
     types: [sheet-updated]
   schedule:
-    - cron: "0 2 * * *"
+    - cron: "*/30 * * * *"
   workflow_dispatch:
 
 permissions:
