@@ -54,13 +54,21 @@ body{font-family:'Montserrat',sans-serif;background:var(--white);color:var(--bla
 .mobile-menu.open{display:flex;}
 .mobile-menu a{font-size:0.8rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--grey-dark);text-decoration:none;padding:0.5rem 0;border-bottom:1px solid var(--grey-light);}
 
-.hero{min-height:100vh;position:relative;display:grid;grid-template-columns:1fr 1fr;overflow:hidden;}
-.hero-left{display:flex;flex-direction:column;justify-content:center;padding:130px 5vw 80px 8vw;position:relative;z-index:2;}
+.hero{min-height:100vh;position:relative;display:flex;flex-direction:column;overflow:hidden;}
+.hero-top{display:grid;grid-template-columns:1fr 1fr;flex:1;}
+.hero-left{display:flex;flex-direction:column;justify-content:flex-end;padding:130px 5vw 40px 8vw;position:relative;z-index:2;}
 .hero-tag{font-size:1.2rem;font-weight:700;letter-spacing:0.3em;text-transform:uppercase;color:var(--red);margin-bottom:1.8rem;display:flex;align-items:center;gap:12px;}
 .hero-tag::before{content:'';display:block;width:36px;height:1px;background:var(--red);}
+.hero-right{position:relative;overflow:hidden;}
+.hero-right img{width:100%;height:100%;object-fit:cover;object-position:center top;filter:brightness(0.88) saturate(0.9);}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(139,30,30,0.45) 0%,rgba(26,22,20,0.3) 100%);mix-blend-mode:multiply;}
+.hero-image-banner{width:100%;height:420px;position:relative;overflow:hidden;flex-shrink:0;}
+.hero-image-banner img{width:100%;height:100%;object-fit:cover;object-position:center 30%;filter:brightness(0.82) saturate(0.88);}
+.hero-image-banner-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(26,22,20,0.1) 0%,rgba(26,22,20,0.45) 100%);}
+.hero-bottom{display:flex;flex-direction:column;align-items:flex-start;padding:40px 8vw 70px;background:var(--white);}
 .hero-h1{font-family:'Cormorant Garamond',serif;font-size:clamp(3rem,5.2vw,5.5rem);font-weight:300;line-height:1.08;color:var(--black);margin-bottom:1.5rem;}
 .hero-h1 em{font-style:italic;color:var(--red);}
-.hero-sub{font-size:0.87rem;font-weight:400;line-height:1.9;color:var(--grey-dark);max-width:420px;margin-bottom:2.5rem;text-align:justify;}
+.hero-sub{font-size:0.87rem;font-weight:400;line-height:1.9;color:var(--grey-dark);max-width:620px;margin-bottom:2.5rem;text-align:justify;}
 .hero-actions{display:flex;gap:1.2rem;flex-wrap:wrap;align-items:center;}
 .btn-primary{display:inline-flex;align-items:center;gap:10px;background:var(--red);color:var(--white);font-size:0.7rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;padding:14px 28px;text-decoration:none;transition:all 0.25s;position:relative;overflow:hidden;border:none;cursor:pointer;font-family:'Montserrat',sans-serif;}
 .btn-primary::after{content:'';position:absolute;inset:0;background:var(--red-dark);transform:scaleX(0);transform-origin:right;transition:transform 0.3s ease;}
@@ -71,9 +79,6 @@ body{font-family:'Montserrat',sans-serif;background:var(--white);color:var(--bla
 .hero-stats{display:flex;gap:2.5rem;margin-top:3.5rem;padding-top:2rem;border-top:1px solid var(--grey-light);}
 .stat-num{font-family:'Cormorant Garamond',serif;font-size:2.4rem;font-weight:600;color:var(--red);line-height:1;}
 .stat-label{font-size:0.62rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--grey-mid);margin-top:4px;}
-.hero-right{position:relative;overflow:hidden;}
-.hero-right img{width:100%;height:100%;object-fit:cover;object-position:center top;filter:brightness(0.88) saturate(0.9);}
-.hero-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(139,30,30,0.45) 0%,rgba(26,22,20,0.3) 100%);mix-blend-mode:multiply;}
 
 .marquee-bar{background:var(--red);padding:12px 0;overflow:hidden;display:flex;}
 .marquee-track{display:flex;animation:marquee 55s linear infinite;white-space:nowrap;}
@@ -135,7 +140,8 @@ section{position:relative;}
 .global{padding:110px 8vw;display:grid;grid-template-columns:1fr 1.2fr;gap:8vw;align-items:center;background:var(--off-white);}
 .global-body{font-size:0.88rem;line-height:1.9;color:var(--grey-dark);margin:1.6rem 0 2rem;text-align:justify;}
 .countries{display:flex;flex-wrap:wrap;gap:0.6rem;margin-top:1.8rem;}
-.country-chip{font-size:0.63rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:7px 14px;border:1px solid var(--grey-light);color:var(--grey-dark);background:var(--white);transition:all 0.2s;cursor:default;}
+.country-chip{font-size:0.63rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:7px 14px;border:1px solid var(--grey-light);color:var(--grey-dark);background:var(--white);transition:all 0.2s;cursor:default;font-family:'Segoe UI Emoji','Apple Color Emoji','Noto Color Emoji',sans-serif;}
+.country-chip .flag{font-family:'Segoe UI Emoji','Apple Color Emoji','Noto Color Emoji','Twemoji Mozilla',sans-serif;font-size:1rem;display:inline-block;margin-right:6px;font-style:normal;}
 .country-chip:hover{background:var(--red);color:var(--white);border-color:var(--red);}
 .global-img{width:100%;height:auto;max-height:460px;object-fit:cover;filter:brightness(0.9) saturate(0.85);display:block;}
 
@@ -147,6 +153,7 @@ section{position:relative;}
 .team-exp-banner .exp-num{font-family:'Cormorant Garamond',serif;font-size:2.4rem;font-weight:600;line-height:1;}
 .team-exp-banner .exp-label{font-size:0.65rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;opacity:0.85;text-align:left;line-height:1.4;}
 .team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.8rem;}
+.team-grid-bottom{display:grid;grid-template-columns:repeat(2,1fr);gap:1.8rem;max-width:calc(66.66% + 1.2rem);margin:1.8rem auto 0;}
 .team-card{position:relative;overflow:hidden;background:var(--off-white);transition:transform 0.3s;}
 .team-card:hover{transform:translateY(-5px);}
 .team-img-wrap{position:relative;overflow:hidden;height:280px;background:var(--off-white);display:flex;align-items:flex-start;justify-content:center;}
@@ -294,9 +301,10 @@ footer{background:var(--red-dark);padding:3rem 8vw 2rem;}
   #navbar{padding:0 4vw;}
   .nav-links,.nav-cta{display:none !important;}
   .hamburger{display:flex;}
-  .hero{grid-template-columns:1fr;min-height:auto;}
-  .hero-left{padding:110px 6vw 55px;}
-  .hero-right{height:55vw;min-height:260px;}
+  .hero-top{grid-template-columns:1fr;}
+  .hero-left{padding:110px 6vw 40px;}
+  .hero-image-banner{height:55vw;min-height:220px;}
+  .hero-bottom{padding:30px 6vw 55px;}
   .about{grid-template-columns:1fr;padding:70px 6vw;gap:2.5rem;}
   .about-img-wrap img{width:80%;height:300px;}
   .about-img-frame{left:calc(10% - 18px);width:80%;}
@@ -310,6 +318,7 @@ footer{background:var(--red-dark);padding:3rem 8vw 2rem;}
   .global{grid-template-columns:1fr;padding:70px 6vw;gap:2.5rem;}
   .team{padding:70px 6vw;}
   .team-grid{grid-template-columns:1fr;gap:1.2rem;}
+  .team-grid-bottom{grid-template-columns:1fr;max-width:100%;margin-top:1.2rem;}
   .team-img-wrap{height:280px;}
   .team-img-wrap img{width:45%;}
   .vision{grid-template-columns:1fr;padding:70px 6vw;gap:2.5rem;}
@@ -383,7 +392,7 @@ footer{background:var(--red-dark);padding:3rem 8vw 2rem;}
 
 <div class="callback-modal" id="callbackModal" role="dialog" aria-modal="true" aria-labelledby="callbackTitle">
   <div class="callback-box">
-    <button class="callback-close" onclick="document.getElementById('callbackModal').classList.remove('open')" aria-label="Close">✕</button>
+    <button class="callback-close" onclick="document.getElementById('callbackModal').classList.remove('open')" aria-label="Close">&#x2715;</button>
     <div class="callback-title" id="callbackTitle">Request a Call Back</div>
     <p class="callback-sub">Leave your details and we'll call you within one working day.</p>
     <div id="cbFormWrap">
@@ -392,9 +401,9 @@ footer{background:var(--red-dark);padding:3rem 8vw 2rem;}
       <div class="cb-form-group"><label class="cb-label" for="cb_time">Best Time to Call</label>
         <select class="form-select form-input" id="cb_time">
           <option value="">Anytime</option>
-          <option>Morning (9am – 12pm)</option>
-          <option>Afternoon (12pm – 4pm)</option>
-          <option>Evening (4pm – 7pm)</option>
+          <option>Morning (9am &ndash; 12pm)</option>
+          <option>Afternoon (12pm &ndash; 4pm)</option>
+          <option>Evening (4pm &ndash; 7pm)</option>
         </select>
       </div>
       <div class="cb-form-group"><label class="cb-label" for="cb_subject">Subject (optional)</label><input type="text" class="form-input" id="cb_subject" placeholder="e.g. GST advisory, Transfer Pricing"></div>
@@ -419,7 +428,7 @@ footer{background:var(--red-dark);padding:3rem 8vw 2rem;}
 const CACHE_KEY='kma_site_data';
 const CACHE_TS_KEY='kma_site_ts';
 const CACHE_TTL=24*60*60*1000;
-const API_URL='https://script.google.com/macros/s/AKfycbyqhhKjtQ-6mezO0_LH0Krxb9dFc4Ui_fb__rRfiocBeStFVTna-jGh4-JdrMdJibj2Sw/exec';
+const API_URL='https://script.google.com/macros/s/AKfycbyYebLbh6EwNMN0EEbjBtZwEGCVaOmBepBfK38ZES2DA86Jao67XfZIe_070iD9pwHmpQ/exec';
 
 const SVC_ICONS=[
   `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>`,
@@ -449,42 +458,33 @@ async function loadData(){
   try{
     const cached=localStorage.getItem(CACHE_KEY);
     const ts=parseInt(localStorage.getItem(CACHE_TS_KEY)||'0',10);
-    if(cached&&(Date.now()-ts<CACHE_TTL)){
-      return JSON.parse(cached);
-    }
+    if(cached&&(Date.now()-ts<CACHE_TTL)){return JSON.parse(cached);}
   }catch(e){}
-
   const res=await fetch(API_URL);
   if(!res.ok)throw new Error('API error');
   const data=await res.json();
-
   try{
     localStorage.setItem(CACHE_KEY,JSON.stringify(data));
     localStorage.setItem(CACHE_TS_KEY,String(Date.now()));
   }catch(e){}
-
   return data;
 }
 
 async function init(){
   let cfg;
-  try{
-    cfg=await loadData();
-  }catch(e){
+  try{cfg=await loadData();}
+  catch(e){
     console.error('Failed to load site data',e);
     document.getElementById('main-content').innerHTML='<div style="padding:200px 8vw;text-align:center;font-size:0.9rem;color:#5A534C;">Content is loading. Please refresh.</div>';
     return;
   }
-
   const{site,hero,about,services,global:glob,team,vision,careers,contact,articles}=cfg;
-
-  document.title=`${site.name} — ${site.tagline}`;
+  document.title=`${site.name} \u2014 ${site.tagline}`;
   document.querySelector('meta[name="description"]').content=site.description;
-  document.querySelector('meta[property="og:title"]').content=`${site.name} — ${site.tagline}`;
+  document.querySelector('meta[property="og:title"]').content=`${site.name} \u2014 ${site.tagline}`;
   document.querySelector('meta[property="og:description"]').content=site.description;
   document.body.dataset.email=site.email;
   document.body.dataset.whatsapp=site.whatsapp;
-
   const schemaEl=document.getElementById('schema-org');
   if(schemaEl)schemaEl.textContent=JSON.stringify({
     "@context":"https://schema.org","@type":"AccountingService",
@@ -495,9 +495,7 @@ async function init(){
       "addressRegion":site.address.state,"addressCountry":"IN"},
     "telephone":site.phone,"email":site.email
   });
-
   const featured=(articles||[]).filter(a=>a.featured).slice(0,3);
-
   document.getElementById('main-content').innerHTML=
     buildHero(hero,site)+
     buildMarquee(services)+
@@ -509,18 +507,15 @@ async function init(){
     buildArticles(featured)+
     buildCareers(careers,contact,site)+
     buildCTA(contact,site);
-
   document.getElementById('footer-wrap').innerHTML=
     buildDisclaimer()+buildFooter(site)+buildWhatsApp(site);
-
   initNavbar();
   initHamburger();
   initFadeUp();
   initSplash();
   initDisclaimer();
-
   const copyEl=document.getElementById('footer-copy');
-  if(copyEl)copyEl.textContent=`© ${new Date().getFullYear()} ${site.name} · All Rights Reserved`;
+  if(copyEl)copyEl.textContent='\u00A9 '+new Date().getFullYear()+' '+site.name+' \u00B7 All Rights Reserved';
 }
 
 function buildHero(h,site){
@@ -529,8 +524,20 @@ function buildHero(h,site){
   ).join('');
   return`
   <section class="hero" aria-label="Hero">
-    <div class="hero-left">
-      <p class="hero-tag">${esc(h.tagline)}</p>
+    <div class="hero-top">
+      <div class="hero-left">
+        <p class="hero-tag">${esc(h.tagline)}</p>
+      </div>
+      <div class="hero-right" role="img" aria-label="${esc(site.name)} professional team">
+        <img src="assets/hero-team.jpg" alt="${esc(site.name)} team" loading="eager" fetchpriority="high">
+        <div class="hero-overlay" aria-hidden="true"></div>
+      </div>
+    </div>
+    <div class="hero-image-banner" aria-hidden="true">
+      <img src="assets/hero-team.jpg" alt="" loading="eager">
+      <div class="hero-image-banner-overlay"></div>
+    </div>
+    <div class="hero-bottom">
       <h1 class="hero-h1">${esc(h.heading)}<br><em>${esc(h.headingEm)}</em></h1>
       <p class="hero-sub">${esc(h.subtext)}</p>
       <div class="hero-actions">
@@ -538,10 +545,6 @@ function buildHero(h,site){
         <button class="btn-outline" onclick="document.getElementById('callbackModal').classList.add('open')">Request a Call Back</button>
       </div>
       <div class="hero-stats">${stats}</div>
-    </div>
-    <div class="hero-right" role="img" aria-label="${esc(site.name)} professional team">
-      <img src="assets/hero-team.jpg" alt="${esc(site.name)} team" loading="eager" fetchpriority="high">
-      <div class="hero-overlay" aria-hidden="true"></div>
     </div>
   </section>`;
 }
@@ -594,7 +597,7 @@ function buildServices(services){
         <h2 class="section-title" id="services-title">Comprehensive <em>Services</em><br>Under One Roof</h2>
       </div>
       <div>
-        <p class="services-intro">From statutory audits and direct taxation to transfer pricing and Virtual CFO mandates — we cover the full financial and compliance spectrum for businesses of every scale, sector, and geography.</p>
+        <p class="services-intro">From statutory audits and direct taxation to transfer pricing and Virtual CFO mandates &mdash; we cover the full financial and compliance spectrum for businesses of every scale, sector, and geography.</p>
         <div class="services-stat-row">
           <div><div class="s-stat-num">${services.length}</div><div class="s-stat-label">Core Areas</div></div>
           <div><div class="s-stat-num">7+</div><div class="s-stat-label">Countries</div></div>
@@ -612,7 +615,8 @@ function buildServices(services){
 
 function buildGlobal(g){
   const chips=(g.countries||[]).map(c=>
-    `<div class="country-chip">${c.flag} ${esc(c.name)}</div>`).join('');
+    `<div class="country-chip"><span class="flag">${c.flag}</span>${esc(c.name)}</div>`
+  ).join('');
   return`
   <section class="global" id="global" aria-labelledby="global-title">
     <div class="fade-up">
@@ -628,7 +632,7 @@ function buildGlobal(g){
 }
 
 function buildTeam(team){
-  const cards=(team||[]).map(m=>`
+  const allCards=(team||[]).map(m=>`
     <article class="team-card fade-up">
       <div class="team-img-wrap">
         <img src="${esc(m.photo)}" alt="${esc(m.name)}" loading="lazy">
@@ -642,7 +646,9 @@ function buildTeam(team){
           <a href="${esc(m.linkedin)}" target="_blank" rel="noopener noreferrer" class="linkedin-btn">${LI_SVG} LinkedIn</a>
         </div>
       </div>
-    </article>`).join('');
+    </article>`);
+  const topRow=allCards.slice(0,3).join('');
+  const bottomRow=allCards.slice(3).join('');
   return`
   <section class="team" id="team" aria-labelledby="team-title">
     <div class="team-header fade-up">
@@ -655,7 +661,8 @@ function buildTeam(team){
         </div>
       </div>
     </div>
-    <div class="team-grid">${cards}</div>
+    <div class="team-grid">${topRow}</div>
+    ${bottomRow?`<div class="team-grid-bottom">${bottomRow}</div>`:''}
   </section>`;
 }
 
@@ -746,12 +753,12 @@ function buildCareers(careers,contact,site){
           <div class="form-group"><label class="form-label" for="cf_exp_val">Years of Experience</label><input type="text" class="form-input" id="cf_exp_val" placeholder="e.g. 3 years / Fresher"></div>
           <div class="form-group full"><label class="form-label" for="cf_area">Area of Interest</label><input type="text" class="form-input" id="cf_area" placeholder="e.g. Transfer Pricing, GST, Audit"></div>
           <div class="form-group full"><label class="form-label" for="cf_note">Brief Cover Note</label><textarea class="form-textarea form-input" id="cf_note" placeholder="Tell us a little about yourself and why you want to join KMA..."></textarea></div>
-          <div class="form-group full"><label class="form-label" for="cf_file">Resume / CV (PDF preferred)</label><input type="file" class="form-file" id="cf_file" accept=".pdf,.doc,.docx"></div>
         </div>
         <div class="form-submit">
           <p class="form-note">Your application goes directly to our hiring team. We respond within 2 working days.</p>
-          <button class="btn-primary" onclick="submitCareerForm()"><span>Submit Application</span></button>
+          <button class="btn-primary" id="careerSubmitBtn" onclick="submitCareerForm()"><span>Submit Application</span></button>
         </div>
+        <div id="careerError" style="display:none;margin-top:0.8rem;font-size:0.75rem;color:var(--red);"></div>
       </div>
       <div class="success-msg" id="careerSuccess">
         <div class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div>
@@ -773,7 +780,7 @@ function buildCTA(contact,site){
   <section class="cta-section" id="contact" aria-labelledby="cta-title">
     <p class="section-tag">Get in Touch</p>
     <h2 class="section-title" id="cta-title" style="margin-bottom:0;">Let's Build Something<br><em>Exceptional Together</em></h2>
-    <p class="cta-sub">Whether you're a startup, an SME, or a global enterprise — KMA brings the expertise, network, and commitment to make your financial journey seamless and well-structured.</p>
+    <p class="cta-sub">Whether you're a startup, an SME, or a global enterprise &mdash; KMA brings the expertise, network, and commitment to make your financial journey seamless and well-structured.</p>
     <div class="cta-action-row">
       <a href="mailto:${esc(site.email)}" class="btn-primary"><span>Email Us</span></a>
       <button class="btn-callback" onclick="document.getElementById('callbackModal').classList.add('open')">
@@ -787,7 +794,7 @@ function buildCTA(contact,site){
         <div class="contact-label">Office</div>
         <div class="contact-name">Pune Headquarters</div>
         <span class="contact-detail">${esc(site.address.line1)}</span>
-        <span class="contact-detail">${esc(site.address.line2)}, ${esc(site.address.city)} – ${esc(site.address.pin)}</span>
+        <span class="contact-detail">${esc(site.address.line2)}, ${esc(site.address.city)} &ndash; ${esc(site.address.pin)}</span>
       </div>
     </address>
   </section>`;
@@ -811,7 +818,7 @@ function buildFooter(site){
     <div class="footer-top">
       <div class="footer-brand">
         <img src="assets/logo.png" alt="${esc(site.name)}" class="footer-logo-img" loading="lazy" onerror="this.style.display='none'">
-        <div class="footer-tagline">${esc(site.name)} · ${esc(site.tagline)}</div>
+        <div class="footer-tagline">${esc(site.name)} &middot; ${esc(site.tagline)}</div>
         <p class="footer-brand-desc">${esc(site.description)}</p>
       </div>
       <div>
@@ -830,7 +837,7 @@ function buildFooter(site){
     </div>
     <div class="footer-bottom">
       <div class="footer-copy" id="footer-copy"></div>
-      <address class="footer-addr">${esc(site.address.line1)}, ${esc(site.address.line2)}<br>${esc(site.address.city)} – ${esc(site.address.pin)}, ${esc(site.address.state)}</address>
+      <address class="footer-addr">${esc(site.address.line1)}, ${esc(site.address.line2)}<br>${esc(site.address.city)} &ndash; ${esc(site.address.pin)}, ${esc(site.address.state)}</address>
     </div>
   </footer>`;
 }
@@ -900,22 +907,33 @@ function dismissDisclaimer(){
   document.getElementById('cookieDisclaimer').classList.remove('show');
 }
 
-function submitCareerForm(){
-  const email=document.body.dataset.email||'kamesh@kmaca.in';
+async function submitCareerForm(){
   const name=document.getElementById('cf_name').value.trim();
-  const em=document.getElementById('cf_email').value.trim();
-  const ph=document.getElementById('cf_phone').value.trim();
+  const email=document.getElementById('cf_email').value.trim();
+  const phone=document.getElementById('cf_phone').value.trim();
   const type=document.getElementById('cf_type').value;
-  if(!name||!em||!ph||!type){alert('Please fill in all required fields.');return;}
-  const subject=encodeURIComponent(`Career Application – KMA | ${type}`);
-  const body=encodeURIComponent(
-    `Application Type: ${type}\n\nName: ${name}\nEmail: ${em}\nPhone: ${ph}\n`+
-    `Qualification: ${document.getElementById('cf_qual').value}\n`+
-    `Experience: ${document.getElementById('cf_exp_val').value}\n`+
-    `Area of Interest: ${document.getElementById('cf_area').value}\n\n`+
-    `Cover Note:\n${document.getElementById('cf_note').value}`
-  );
-  window.open(`mailto:${email}?subject=${subject}&body=${body}`,'_blank');
+  const errEl=document.getElementById('careerError');
+  errEl.style.display='none';
+  if(!name||!email||!phone||!type){
+    errEl.textContent='Please fill in all required fields.';
+    errEl.style.display='block';
+    return;
+  }
+  const btn=document.getElementById('careerSubmitBtn');
+  btn.disabled=true;
+  btn.querySelector('span').textContent='Submitting\u2026';
+  const payload={
+    action:'career',
+    name,email,phone,type,
+    qualification:document.getElementById('cf_qual').value.trim(),
+    experience:document.getElementById('cf_exp_val').value.trim(),
+    area:document.getElementById('cf_area').value.trim(),
+    note:document.getElementById('cf_note').value.trim(),
+    timestamp:new Date().toISOString()
+  };
+  try{
+    await fetch(API_URL,{method:'POST',body:JSON.stringify(payload)});
+  }catch(e){}
   document.getElementById('careerFormWrap').style.display='none';
   document.getElementById('careerSuccess').style.display='block';
 }
@@ -925,12 +943,12 @@ function submitCallback(){
   const phone=document.getElementById('cb_phone').value.trim();
   if(!name||!phone){alert('Please enter your name and phone number.');return;}
   const email=document.body.dataset.email||'kamesh@kmaca.in';
-  const subject=encodeURIComponent('Call Back Request – KMA');
+  const subject=encodeURIComponent('Call Back Request \u2013 KMA');
   const body=encodeURIComponent(
-    `Name: ${name}\nPhone: ${phone}\nBest Time: ${document.getElementById('cb_time').value||'Anytime'}\n`+
-    `Subject: ${document.getElementById('cb_subject').value||'General Enquiry'}`
+    'Name: '+name+'\nPhone: '+phone+'\nBest Time: '+(document.getElementById('cb_time').value||'Anytime')+'\n'+
+    'Subject: '+(document.getElementById('cb_subject').value||'General Enquiry')
   );
-  window.open(`mailto:${email}?subject=${subject}&body=${body}`,'_blank');
+  window.open('mailto:'+email+'?subject='+subject+'&body='+body,'_blank');
   document.getElementById('cbFormWrap').style.display='none';
   document.getElementById('cbSuccess').style.display='block';
 }
