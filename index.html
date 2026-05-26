@@ -436,9 +436,6 @@ footer{background:var(--red-dark);padding:3rem 8vw 2rem;}
 </div>
 
 <script>
-const CACHE_KEY='kma_site_data';
-const CACHE_TS_KEY='kma_site_ts';
-const CACHE_TTL=24*60*60*1000;
 const API_URL='https://script.google.com/macros/s/AKfycbyYebLbh6EwNMN0EEbjBtZwEGCVaOmBepBfK38ZES2DA86Jao67XfZIe_070iD9pwHmpQ/exec';
 
 const SVC_ICONS=[
@@ -466,19 +463,9 @@ function esc(s){
 }
 
 async function loadData(){
-  try{
-    const cached=localStorage.getItem(CACHE_KEY);
-    const ts=parseInt(localStorage.getItem(CACHE_TS_KEY)||'0',10);
-    if(cached&&(Date.now()-ts<CACHE_TTL)){return JSON.parse(cached);}
-  }catch(e){}
   const res=await fetch(API_URL);
   if(!res.ok)throw new Error('API error');
-  const data=await res.json();
-  try{
-    localStorage.setItem(CACHE_KEY,JSON.stringify(data));
-    localStorage.setItem(CACHE_TS_KEY,String(Date.now()));
-  }catch(e){}
-  return data;
+  return res.json();
 }
 
 async function init(){
@@ -693,7 +680,7 @@ function buildVision(v){
 function buildArticles(featured){
   const icon=`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>`;
   const cards=featured.length?featured.map(a=>`
-    <a class="article-card fade-up" href="article.html?slug=${esc(a.slug)}">
+    <a class="article-card fade-up" href="articles.html?slug=${esc(a.slug)}">
       ${a.cover
         ?`<div class="article-img-wrap"><img src="${esc(a.cover)}" alt="${esc(a.title)}" loading="lazy"></div>`
         :`<div class="article-img-placeholder">${icon}</div>`}
@@ -963,4 +950,4 @@ function submitCallback(){
 init();
 </script>
 </body>
-</html> 
+</html>
