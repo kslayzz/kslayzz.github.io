@@ -32,11 +32,9 @@
   --grey-dark: #5A534C;
   --black: #1A1614;
 }
-
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
 body { font-family: 'Montserrat', sans-serif; background: var(--white); color: var(--black); overflow-x: hidden; }
-
 #navbar {
   position: fixed; top: 0; left: 0; right: 0; z-index: 100;
   display: flex; align-items: center; justify-content: space-between;
@@ -45,61 +43,48 @@ body { font-family: 'Montserrat', sans-serif; background: var(--white); color: v
   border-bottom: 1px solid var(--grey-light); transition: box-shadow 0.3s;
 }
 #navbar.scrolled { box-shadow: 0 4px 32px rgba(139,30,30,0.08); }
-
 .logo { display: flex; align-items: center; text-decoration: none; gap: 10px; }
 .logo-img { height: 52px; width: auto; display: block; object-fit: contain; }
 .logo-fallback { display: none; flex-direction: column; }
 .logo-text { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 600; color: var(--red); letter-spacing: 0.06em; line-height: 1; }
 .logo-sub { font-size: 0.45rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--grey-dark); margin-top: 2px; }
-
 .nav-links { display: flex; align-items: center; gap: 1.8rem; list-style: none; }
 .nav-links a { font-size: 0.66rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--grey-dark); text-decoration: none; transition: color 0.2s; }
 .nav-links a:hover { color: var(--red); }
 .nav-cta { font-size: 0.66rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--white); background: var(--red); padding: 9px 18px; border: none; cursor: pointer; text-decoration: none; transition: background 0.2s; white-space: nowrap; }
 .nav-cta:hover { background: var(--red-dark); }
-
 .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
 .hamburger span { display: block; width: 24px; height: 2px; background: var(--red); transition: all 0.3s; }
-
 .mobile-menu { display: none; position: fixed; top: 68px; left: 0; right: 0; background: var(--white); border-bottom: 2px solid var(--red); padding: 2rem 5vw; z-index: 99; flex-direction: column; gap: 1.2rem; }
 .mobile-menu.open { display: flex; }
 .mobile-menu a { font-size: 0.8rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--grey-dark); text-decoration: none; padding: 0.5rem 0; border-bottom: 1px solid var(--grey-light); }
-
 .progress-bar { position: fixed; top: 68px; left: 0; height: 2px; background: var(--red); z-index: 99; transition: width 0.1s linear; width: 0%; }
-
 .article-hero { padding: 110px 8vw 60px; background: var(--off-white); border-bottom: 1px solid var(--grey-light); }
 .back-link { display: inline-flex; align-items: center; gap: 8px; font-size: 0.62rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--grey-dark); text-decoration: none; margin-bottom: 2.2rem; transition: color 0.2s, gap 0.2s; }
 .back-link:hover { color: var(--red); gap: 12px; }
 .back-link svg { transform: rotate(180deg); }
-
 .article-meta-row { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.4rem; flex-wrap: wrap; }
 .article-cat-badge { font-size: 0.58rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--white); background: var(--red); padding: 5px 13px; }
 .article-date-badge, .article-read-badge { font-size: 0.63rem; color: var(--grey-mid); font-weight: 500; }
-
 .article-hero-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.2rem, 4.5vw, 4.2rem); font-weight: 300; line-height: 1.08; color: var(--black); max-width: 900px; margin-bottom: 1.4rem; }
 .article-excerpt-lead { font-size: 1.05rem; line-height: 1.85; color: var(--grey-dark); max-width: 720px; font-style: italic; font-family: 'Cormorant Garamond', serif; border-left: 3px solid var(--red); padding-left: 1.4rem; margin-bottom: 2rem; }
-
 .article-author-row { display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--grey-light); flex-wrap: wrap; }
 .author-info { display: flex; align-items: center; gap: 1rem; }
 .author-dot { width: 38px; height: 38px; background: var(--red); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
 .author-dot svg { width: 18px; height: 18px; stroke: white; }
 .author-name { font-size: 0.76rem; font-weight: 700; letter-spacing: 0.04em; color: var(--black); }
 .author-label { font-size: 0.62rem; color: var(--grey-mid); margin-top: 1px; }
-
 .share-row { display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; }
 .share-label { font-size: 0.58rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--grey-mid); margin-right: 0.2rem; }
 .share-btn { display: inline-flex; align-items: center; gap: 6px; font-size: 0.58rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 7px 13px; border: 1px solid var(--grey-light); background: transparent; color: var(--grey-dark); cursor: pointer; transition: all 0.2s; text-decoration: none; font-family: 'Montserrat', sans-serif; white-space: nowrap; }
 .share-btn:hover { background: var(--red); color: var(--white); border-color: var(--red); }
 .share-btn svg { width: 12px; height: 12px; flex-shrink: 0; }
 .share-btn.copied { background: var(--black); color: var(--white); border-color: var(--black); }
-
 .article-cover-wrap { overflow: hidden; max-height: 500px; background: var(--grey-light); }
 .article-cover { width: 100%; height: 100%; max-height: 500px; object-fit: cover; display: block; }
-
 .article-outer { padding: 60px 8vw 90px; }
 .article-layout { display: grid; grid-template-columns: 1fr 310px; gap: 5rem; max-width: 1360px; margin: 0 auto; }
 .article-body { min-width: 0; }
-
 .article-body h1 { font-family: 'Cormorant Garamond', serif; font-size: 2.4rem; font-weight: 300; line-height: 1.15; color: var(--black); margin: 2.2rem 0 1rem; }
 .article-body h2 { font-family: 'Cormorant Garamond', serif; font-size: 1.9rem; font-weight: 600; line-height: 1.18; color: var(--black); margin: 2.8rem 0 1rem; padding-bottom: 0.6rem; border-bottom: 1px solid var(--grey-light); }
 .article-body h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 600; color: var(--black); margin: 2rem 0 0.7rem; }
@@ -117,7 +102,6 @@ body { font-family: 'Montserrat', sans-serif; background: var(--white); color: v
 .article-body ol { margin: 0.8rem 0 1.3rem 0; padding: 0; list-style: none; counter-reset: ol-counter; }
 .article-body ol li { font-size: 0.92rem; line-height: 1.9; color: var(--grey-dark); margin-bottom: 0.45rem; padding-left: 2rem; position: relative; counter-increment: ol-counter; }
 .article-body ol li::before { content: counter(ol-counter) "."; position: absolute; left: 0; top: 0; font-size: 0.78rem; font-weight: 700; color: var(--red); min-width: 1.5rem; }
-.article-body ul ul, .article-body ol ul, .article-body ul ol, .article-body ol ol { margin: 0.3rem 0 0.3rem 1rem; }
 .article-body blockquote { border-left: 3px solid var(--red); padding: 1.1rem 1.6rem; margin: 2rem 0; background: var(--off-white); }
 .article-body blockquote p { margin: 0; font-style: italic; font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; color: var(--black); text-align: left; }
 .article-body hr { border: none; border-top: 1px solid var(--grey-light); margin: 2.8rem 0; }
@@ -126,10 +110,9 @@ body { font-family: 'Montserrat', sans-serif; background: var(--white); color: v
 .article-body td { padding: 11px 15px; border-bottom: 1px solid var(--grey-light); color: var(--grey-dark); line-height: 1.65; }
 .article-body tr:nth-child(even) td { background: var(--off-white); }
 .article-body code { font-family: monospace; font-size: 0.82rem; background: var(--off-white); padding: 2px 6px; border: 1px solid var(--grey-light); }
-.article-body pre { background: var(--black); padding: 1.4rem 1.6rem; overflow-x: auto; margin: 1.4rem 0; border-radius: 2px; }
+.article-body pre { background: var(--black); padding: 1.4rem 1.6rem; overflow-x: auto; margin: 1.4rem 0; }
 .article-body pre code { background: none; border: none; color: rgba(255,255,255,0.85); font-size: 0.82rem; padding: 0; }
 .article-body img { max-width: 100%; height: auto; display: block; margin: 1.6rem 0; }
-
 .article-sidebar { position: sticky; top: 88px; height: fit-content; display: flex; flex-direction: column; gap: 1.4rem; }
 .sidebar-card { background: var(--off-white); border: 1px solid var(--grey-light); border-top: 3px solid var(--red); padding: 1.6rem; }
 .sidebar-label { font-size: 0.56rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--red); margin-bottom: 0.8rem; }
@@ -139,29 +122,23 @@ body { font-family: 'Montserrat', sans-serif; background: var(--white); color: v
 .sidebar-cta-text { font-size: 0.74rem; line-height: 1.7; color: var(--grey-dark); margin-bottom: 1.1rem; }
 .btn-sm-red { display: inline-flex; align-items: center; justify-content: center; gap: 8px; background: var(--red); color: var(--white); font-size: 0.64rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; padding: 11px 18px; text-decoration: none; transition: background 0.2s; border: none; cursor: pointer; font-family: 'Montserrat', sans-serif; width: 100%; }
 .btn-sm-red:hover { background: var(--red-dark); }
-
 .toc-list { list-style: none; padding: 0; }
 .toc-list li { border-bottom: 1px solid var(--grey-light); }
 .toc-list li:last-child { border-bottom: none; }
 .toc-list a { font-size: 0.72rem; color: var(--grey-dark); text-decoration: none; transition: color 0.2s; line-height: 1.5; display: block; padding: 0.5rem 0; }
 .toc-list a:hover, .toc-list a.active { color: var(--red); }
 .toc-h3 { padding-left: 0.9rem; font-size: 0.68rem; }
-
 .share-sidebar { display: flex; flex-direction: column; gap: 0.5rem; }
-
 .article-footer-nav { padding: 2.5rem 8vw; border-top: 1px solid var(--grey-light); background: var(--off-white); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.5rem; }
 .btn-outline-sm { display: inline-flex; align-items: center; gap: 8px; background: transparent; color: var(--red); font-size: 0.65rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; padding: 10px 20px; border: 1px solid var(--red); text-decoration: none; transition: all 0.2s; }
 .btn-outline-sm:hover { background: var(--red); color: var(--white); }
-
 .error-state { padding: 160px 8vw 100px; text-align: center; }
 .error-state h2 { font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; font-weight: 300; color: var(--black); margin-bottom: 1rem; }
 .error-state p { font-size: 0.85rem; color: var(--grey-mid); margin-bottom: 2rem; }
-
 footer { background: #6B1414; padding: 2.8rem 8vw 2rem; }
 .footer-bottom-simple { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
 .footer-copy { font-size: 0.66rem; color: rgba(255,255,255,0.4); letter-spacing: 0.05em; }
 .footer-addr { font-size: 0.66rem; color: rgba(255,255,255,0.4); text-align: right; line-height: 1.7; }
-
 @media (max-width: 1100px) { .article-layout { grid-template-columns: 1fr 270px; gap: 3.5rem; } }
 @media (max-width: 900px) {
   .nav-links, .nav-cta { display: none !important; }
@@ -243,12 +220,27 @@ async function loadData() {
   return res.json();
 }
 
+function normaliseBody(raw) {
+  if (!raw) return '';
+  let s = raw;
+  if (typeof s === 'string' && s.length > 1 && s[0] === '"' && s[s.length - 1] === '"') {
+    try { s = JSON.parse(s); } catch (e) {}
+  }
+  s = s.replace(/\\n/g, '\n').replace(/\\t/g, '\t').replace(/\\\\/g, '\\');
+  return s;
+}
+
 function parseMarkdown(raw) {
   if (!raw) return '';
 
-  const lines = raw.split('\n');
+  const src = normaliseBody(raw);
+  const lines = src.split('\n');
   let html = '';
   let i = 0;
+
+  function slugify(s) {
+    return s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+  }
 
   function parseInline(s) {
     return s
@@ -258,91 +250,72 @@ function parseMarkdown(raw) {
       .replace(/___(.+?)___/g, '<strong><em>$1</em></strong>')
       .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
       .replace(/__(.+?)__/g, '<strong>$1</strong>')
-      .replace(/\*([^*]+?)\*/g, '<em>$1</em>')
-      .replace(/_([^_]+?)_/g, '<em>$1</em>')
+      .replace(/\*([^*\n]+?)\*/g, '<em>$1</em>')
+      .replace(/_([^_\n]+?)_/g, '<em>$1</em>')
       .replace(/~~(.+?)~~/g, '<del>$1</del>')
       .replace(/`([^`]+?)`/g, '<code>$1</code>');
   }
 
-  function slugify(s) {
-    return s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
-  }
+  function isULItem(line) { return /^(\s*)[-*+] /.test(line); }
+  function isOLItem(line) { return /^(\s*)\d+[.)] /.test(line); }
+  function isListItem(line) { return isULItem(line) || isOLItem(line); }
+  function indentOf(line) { return (line.match(/^(\s*)/) || ['',''])[1].length; }
 
-  function peekListType(line) {
-    if (/^(\s*)[-*+]\s/.test(line)) return 'ul';
-    if (/^(\s*)\d+[.)]\s/.test(line)) return 'ol';
-    return null;
-  }
+  function parseList(startIdx, baseIndent) {
+    const firstLine = lines[startIdx];
+    const tag = isULItem(firstLine) ? 'ul' : 'ol';
+    let out = `<${tag}>`;
+    let idx = startIdx;
 
-  function getIndent(line) {
-    return (line.match(/^(\s*)/) || ['', ''])[1].length;
-  }
-
-  function parseList(lines, start, baseIndent) {
-    const type = peekListType(lines[start]);
-    let out = `<${type}>`;
-    let idx = start;
     while (idx < lines.length) {
       const line = lines[idx];
-      if (!line.trim()) { idx++; continue; }
-      const indent = getIndent(line);
-      const lt = peekListType(line);
-      if (!lt || indent < baseIndent) break;
-      if (indent > baseIndent && lt) {
-        const nested = parseList(lines, idx, indent);
-        out = out.slice(0, -5) + nested + `</${type}>`;
-        idx = nested._end;
-        out += `</${type}>`;
-        out = out.slice(0, -`</${type}>`.length * 2) + `</${type}>`;
-        const sub = parseList(lines, idx, indent);
-        out = out.replace(/<\/li>\s*$/, sub.html + '</li>');
-        idx = sub._end;
+      if (line.trim() === '') { idx++; continue; }
+      if (!isListItem(line)) break;
+      const ind = indentOf(line);
+      if (ind < baseIndent) break;
+      if (ind > baseIndent) {
+        const sub = parseList(idx, ind);
+        out = out.slice(0, -5) + sub.html + `</${tag}>`;
+        idx = sub.end;
         continue;
       }
-      const text = line.replace(/^\s*[-*+]\s/, '').replace(/^\s*\d+[.)]\s/, '');
+      const text = line.replace(/^\s*[-*+] /, '').replace(/^\s*\d+[.)]\s/, '');
       out += `<li>${parseInline(text)}`;
       idx++;
-      if (idx < lines.length && peekListType(lines[idx]) && getIndent(lines[idx]) > indent) {
-        const sub = parseList(lines, idx, getIndent(lines[idx]));
+      if (idx < lines.length && isListItem(lines[idx]) && indentOf(lines[idx]) > ind) {
+        const sub = parseList(idx, indentOf(lines[idx]));
         out += sub.html;
-        idx = sub._end;
+        idx = sub.end;
       }
       out += '</li>';
     }
-    out += `</${type}>`;
-    return { html: out, _end: idx };
+    out += `</${tag}>`;
+    return { html: out, end: idx };
   }
 
   while (i < lines.length) {
     const line = lines[i];
+    const trimmed = line.trim();
 
     if (line.startsWith('```')) {
       const lang = line.slice(3).trim();
       i++;
       const codeLines = [];
-      while (i < lines.length && !lines[i].startsWith('```')) {
-        codeLines.push(lines[i]);
-        i++;
-      }
+      while (i < lines.length && !lines[i].startsWith('```')) { codeLines.push(lines[i]); i++; }
       i++;
-      const codeEsc = codeLines
-        .map(l => l.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'))
-        .join('\n');
-      html += `<pre><code${lang ? ` class="language-${lang}"` : ''}>${codeEsc}</code></pre>`;
+      const escaped = codeLines.map(l => l.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')).join('\n');
+      html += `<pre><code${lang ? ` class="language-${lang}"` : ''}>${escaped}</code></pre>`;
       continue;
     }
 
     if (/^\s*\|/.test(line) && line.includes('|')) {
-      const tableLines = [];
-      while (i < lines.length && /^\s*\|/.test(lines[i]) && lines[i].includes('|')) {
-        tableLines.push(lines[i]);
-        i++;
-      }
-      let thead = '', tbody = '', headerDone = false;
-      tableLines.forEach((tl, ti) => {
-        if (/^[\s|:-]+$/.test(tl)) { headerDone = true; return; }
-        const cells = tl.split('|').map(c => c.trim()).filter((_, ci, a) => ci > 0 && ci < a.length - 1);
-        if (!headerDone && ti === 0) {
+      const rows = [];
+      while (i < lines.length && /^\s*\|/.test(lines[i]) && lines[i].includes('|')) { rows.push(lines[i]); i++; }
+      let thead = '', tbody = '', seenSep = false;
+      rows.forEach((r, ri) => {
+        if (/^[\s|:-]+$/.test(r)) { seenSep = true; return; }
+        const cells = r.split('|').map(c => c.trim()).filter((_, ci, a) => ci > 0 && ci < a.length - 1);
+        if (!seenSep && ri === 0) {
           thead = `<thead><tr>${cells.map(c => `<th>${parseInline(c)}</th>`).join('')}</tr></thead>`;
         } else {
           tbody += `<tr>${cells.map(c => `<td>${parseInline(c)}</td>`).join('')}</tr>`;
@@ -352,42 +325,36 @@ function parseMarkdown(raw) {
       continue;
     }
 
-    if (peekListType(line)) {
-      const res = parseList(lines, i, getIndent(line));
+    if (isListItem(line)) {
+      const res = parseList(i, indentOf(line));
       html += res.html;
-      i = res._end;
+      i = res.end;
       continue;
     }
 
-    if (/^#{1,6}\s/.test(line)) {
-      const m = line.match(/^(#{1,6})\s+(.+)/);
+    if (/^#{1,6} /.test(line)) {
+      const m = line.match(/^(#{1,6}) (.+)/);
       if (m) {
         const lvl = m[1].length;
-        const txt = parseInline(m[2].trim());
-        const id = slugify(m[2].trim());
-        html += `<h${lvl} id="${id}">${txt}</h${lvl}>`;
+        const text = m[2].trim();
+        const id = slugify(text);
+        html += `<h${lvl} id="${id}">${parseInline(text)}</h${lvl}>`;
       }
       i++; continue;
     }
 
-    if (/^>\s?/.test(line)) {
+    if (/^> ?/.test(line)) {
       const bqLines = [];
-      while (i < lines.length && /^>\s?/.test(lines[i])) {
-        bqLines.push(lines[i].replace(/^>\s?/, ''));
-        i++;
-      }
+      while (i < lines.length && /^> ?/.test(lines[i])) { bqLines.push(lines[i].replace(/^> ?/, '')); i++; }
       html += `<blockquote><p>${parseInline(bqLines.join(' '))}</p></blockquote>`;
       continue;
     }
 
-    if (/^[-*_]{3,}$/.test(line.trim())) {
-      html += '<hr>';
-      i++; continue;
-    }
+    if (/^[-*_]{3,}$/.test(trimmed)) { html += '<hr>'; i++; continue; }
 
-    if (line.trim() === '') { i++; continue; }
+    if (trimmed === '') { i++; continue; }
 
-    html += `<p>${parseInline(line.trim())}</p>`;
+    html += `<p>${parseInline(trimmed)}</p>`;
     i++;
   }
 
@@ -419,10 +386,7 @@ function initTOCHighlight() {
       }
     });
   }, { rootMargin: '-68px 0px -70% 0px' });
-  headingIds.forEach(id => {
-    const el = document.getElementById(id);
-    if (el) observer.observe(el);
-  });
+  headingIds.forEach(id => { const el = document.getElementById(id); if (el) observer.observe(el); });
 }
 
 function buildShareButtons(title, url) {
@@ -619,9 +583,7 @@ async function loadArticle(cfg) {
 
 function initNavbar() {
   const nb = document.getElementById('navbar');
-  window.addEventListener('scroll', () => {
-    nb.classList.toggle('scrolled', window.scrollY > 40);
-  }, { passive: true });
+  window.addEventListener('scroll', () => { nb.classList.toggle('scrolled', window.scrollY > 40); }, { passive: true });
 }
 
 function initHamburger() {
@@ -664,4 +626,4 @@ async function init() {
 init();
 </script>
 </body>
-</html>
+</html> 
