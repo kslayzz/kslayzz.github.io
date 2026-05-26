@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kamesh Mali & Associates — Chartered Accountants</title>
+<title>Kamesh Mali &amp; Associates — Chartered Accountants</title>
 <meta name="description" content="KMA is a technology-enabled CA firm delivering end-to-end financial, audit, tax, and advisory solutions — built on accuracy, honesty, and deep expertise.">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Kamesh Mali & Associates — Chartered Accountants">
+<meta property="og:title" content="Kamesh Mali &amp; Associates — Chartered Accountants">
 <meta property="og:description" content="KMA is a technology-enabled CA firm delivering end-to-end financial, audit, tax, and advisory solutions — built on accuracy, honesty, and deep expertise.">
 <meta property="og:image" content="assets/og-default.jpg">
 <meta name="twitter:card" content="summary_large_image">
@@ -68,7 +68,6 @@ body{font-family:'Montserrat',sans-serif;background:var(--white);color:var(--bla
 .hero-right{position:relative;overflow:hidden;}
 .hero-right img{width:100%;height:100%;object-fit:cover;object-position:center top;filter:brightness(0.88) saturate(0.9);}
 .hero-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(139,30,30,0.45) 0%,rgba(26,22,20,0.3) 100%);mix-blend-mode:multiply;}
-
 .hero-mobile-img{display:none;}
 
 .btn-primary{display:inline-flex;align-items:center;gap:10px;background:var(--red);color:var(--white);font-size:0.7rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;padding:14px 28px;text-decoration:none;transition:all 0.25s;position:relative;overflow:hidden;border:none;cursor:pointer;font-family:'Montserrat',sans-serif;}
@@ -79,10 +78,10 @@ body{font-family:'Montserrat',sans-serif;background:var(--white);color:var(--bla
 .btn-outline:hover{background:var(--red);color:var(--white);}
 
 .marquee-bar{background:var(--red);padding:12px 0;overflow:hidden;display:flex;}
-.marquee-track{display:flex;animation:marquee 55s linear infinite;white-space:nowrap;}
+.marquee-track{display:flex;animation:marquee-rtl 55s linear infinite;white-space:nowrap;}
 .marquee-item{display:inline-flex;align-items:center;gap:1.5rem;font-size:0.63rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.85);padding:0 3rem;}
 .marquee-dot{width:4px;height:4px;background:rgba(255,255,255,0.5);border-radius:50%;flex-shrink:0;}
-@keyframes marquee{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+@keyframes marquee-rtl{from{transform:translateX(-50%);}to{transform:translateX(0);}}
 
 section{position:relative;}
 .section-tag{font-size:0.62rem;font-weight:700;letter-spacing:0.3em;text-transform:uppercase;color:var(--red);margin-bottom:1rem;display:flex;align-items:center;gap:10px;}
@@ -257,18 +256,16 @@ footer{background:var(--red-dark);padding:3rem 8vw 2rem;}
 .footer-brand{display:flex;flex-direction:column;gap:0.4rem;max-width:240px;}
 .footer-logo-img{height:70px;width:120px;display:block;filter:brightness(0) invert(1);opacity:0.9;margin-bottom:0.2rem;}
 .footer-tagline{font-size:0.6rem;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:rgba(255,255,255,0.45);margin-bottom:0.8rem;}
-.footer-brand-desc{font-size:0.7rem;line-height:1.7;color:rgba(255,255,255,0.5);}
 .footer-socials-label,.footer-nav-label{font-size:0.58rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:rgba(255,255,255,0.45);margin-bottom:0.9rem;}
 .footer-socials{display:flex;gap:0.5rem;flex-wrap:wrap;}
 .social-link{display:inline-flex;align-items:center;gap:6px;font-size:0.6rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.6);text-decoration:none;border:1px solid rgba(255,255,255,0.15);padding:7px 12px;transition:all 0.2s;}
 .social-link:hover{background:rgba(255,255,255,0.08);color:var(--white);border-color:rgba(255,255,255,0.3);}
 .social-link svg{width:13px;height:13px;flex-shrink:0;}
-.footer-nav{display:flex;flex-direction:column;gap:0.5rem;}
+.footer-nav{display:grid;grid-template-columns:repeat(3,1fr);gap:0.5rem 1.4rem;}
 .footer-nav a{font-size:0.68rem;color:rgba(255,255,255,0.55);text-decoration:none;transition:color 0.2s;letter-spacing:0.04em;}
 .footer-nav a:hover{color:var(--white);}
-.footer-bottom{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;}
+.footer-bottom{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:1rem;}
 .footer-copy{font-size:0.66rem;color:rgba(255,255,255,0.4);letter-spacing:0.05em;}
-.footer-addr{font-size:0.66rem;color:rgba(255,255,255,0.4);text-align:right;line-height:1.7;}
 
 .whatsapp-fab{position:fixed;bottom:1.8rem;right:1.8rem;z-index:89;width:52px;height:52px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,0.4);text-decoration:none;transition:transform 0.2s,box-shadow 0.2s;}
 .whatsapp-fab:hover{transform:scale(1.08);box-shadow:0 6px 28px rgba(37,211,102,0.55);}
@@ -299,21 +296,17 @@ footer{background:var(--red-dark);padding:3rem 8vw 2rem;}
   #navbar{padding:0 4vw;}
   .nav-links,.nav-cta{display:none !important;}
   .hamburger{display:flex;}
-
   .hero{grid-template-columns:1fr;min-height:auto;display:flex;flex-direction:column;}
   .hero-left{padding:90px 6vw 50px;order:1;}
   .hero-right{display:none;}
-
   .hero-mobile-img{display:block;order:2;width:100%;height:62vw;min-height:240px;max-height:360px;overflow:hidden;position:relative;flex-shrink:0;}
   .hero-mobile-img img{width:100%;height:100%;object-fit:cover;object-position:center top;filter:brightness(0.88) saturate(0.9);display:block;}
   .hero-mobile-img .hero-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(139,30,30,0.45) 0%,rgba(26,22,20,0.3) 100%);mix-blend-mode:multiply;}
-
   .hero-tag{margin-bottom:1.2rem;}
   .hero-h1{margin-bottom:0;}
   .hero-sub{margin-top:1.5rem;margin-bottom:2rem;}
   .hero-actions{order:3;}
   .hero-stats{order:4;margin-top:2.5rem;}
-
   .about{grid-template-columns:1fr;padding:70px 6vw;gap:2.5rem;}
   .about-img-wrap img{width:80%;height:300px;}
   .about-img-frame{left:calc(10% - 18px);width:80%;}
@@ -328,10 +321,8 @@ footer{background:var(--red-dark);padding:3rem 8vw 2rem;}
   .team{padding:70px 6vw;}
   .team-grid{grid-template-columns:1fr;gap:1.2rem;}
   .team-grid-bottom{grid-template-columns:1fr;max-width:100%;margin-top:1.2rem;}
-
   .team-img-wrap{height:auto;aspect-ratio:4/3;}
   .team-img-wrap img{width:100%;height:100%;object-fit:cover;object-position:center top;}
-
   .vision{grid-template-columns:1fr;padding:70px 6vw;gap:2.5rem;}
   .articles{padding:70px 6vw;}
   .articles-grid{grid-template-columns:1fr;}
@@ -346,7 +337,7 @@ footer{background:var(--red-dark);padding:3rem 8vw 2rem;}
   footer{padding:2rem 6vw 1.8rem;}
   .footer-top{flex-direction:column;gap:2rem;}
   .footer-bottom{flex-direction:column;text-align:center;}
-  .footer-addr{text-align:center;}
+  .footer-nav{grid-template-columns:repeat(2,1fr);}
 }
 @media(max-width:600px){
   .hero-h1{font-size:2.5rem;}
@@ -355,6 +346,7 @@ footer{background:var(--red-dark);padding:3rem 8vw 2rem;}
   .hero-stats{flex-wrap:wrap;gap:1rem;}
   .team-exp-banner{flex-direction:column;gap:0.4rem;text-align:center;}
   .section-title{font-size:2rem;}
+  .footer-nav{grid-template-columns:1fr 1fr;}
 }
 </style>
 </head>
@@ -366,7 +358,7 @@ footer{background:var(--red-dark);padding:3rem 8vw 2rem;}
 </div>
 
 <nav id="navbar" role="navigation" aria-label="Main navigation">
-  <a href="/" class="logo" aria-label="KMA — Home">
+  <a href="/" class="logo" aria-label="KMA Home">
     <img src="assets/logo.png" alt="KMA" class="logo-img" width="80" height="80" loading="eager" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
     <div class="logo-fallback">
       <div class="logo-text">KMA</div>
@@ -398,164 +390,56 @@ footer{background:var(--red-dark);padding:3rem 8vw 2rem;}
   <a href="#contact">Contact</a>
 </div>
 
-<main id="main-content"></main>
-<div id="footer-wrap"></div>
+<main id="main-content">
 
-<div class="callback-modal" id="callbackModal" role="dialog" aria-modal="true" aria-labelledby="callbackTitle">
-  <div class="callback-box">
-    <button class="callback-close" onclick="document.getElementById('callbackModal').classList.remove('open')" aria-label="Close">&#x2715;</button>
-    <div class="callback-title" id="callbackTitle">Request a Call Back</div>
-    <p class="callback-sub">Leave your details and we'll call you within one working day.</p>
-    <div id="cbFormWrap">
-      <div class="cb-form-group"><label class="cb-label" for="cb_name">Your Name *</label><input type="text" class="form-input" id="cb_name" placeholder="Full name" autocomplete="name"></div>
-      <div class="cb-form-group"><label class="cb-label" for="cb_phone">Phone Number *</label><input type="tel" class="form-input" id="cb_phone" placeholder="+91 XXXXX XXXXX" autocomplete="tel"></div>
-      <div class="cb-form-group"><label class="cb-label" for="cb_time">Best Time to Call</label>
-        <select class="form-select form-input" id="cb_time">
-          <option value="">Anytime</option>
-          <option>Morning (9am &ndash; 12pm)</option>
-          <option>Afternoon (12pm &ndash; 4pm)</option>
-          <option>Evening (4pm &ndash; 7pm)</option>
-        </select>
-      </div>
-      <div class="cb-form-group"><label class="cb-label" for="cb_subject">Subject (optional)</label><input type="text" class="form-input" id="cb_subject" placeholder="e.g. GST advisory, Transfer Pricing"></div>
-      <div style="margin-top:1.4rem;display:flex;justify-content:flex-end;"><button class="btn-primary" onclick="submitCallback()"><span>Request Call Back</span></button></div>
-    </div>
-    <div class="success-msg" id="cbSuccess">
-      <div class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div>
-      <p><strong>We'll call you back shortly.</strong><br>A partner will reach out within one working day.</p>
-    </div>
-  </div>
-</div>
-
-<div class="cookie-disclaimer" id="cookieDisclaimer">
-  <p class="cookie-text">
-    <strong style="color:rgba(255,255,255,0.9);font-size:0.7rem;text-transform:uppercase;letter-spacing:0.1em;">Professional Disclaimer</strong><br>
-    Information on this website is for general informational purposes only and does not constitute professional advice or solicitation. No client-professional relationship is created by visiting this site.
-  </p>
-  <button class="cookie-accept" onclick="dismissDisclaimer()">I Understand</button>
-</div>
-
-<script>
-const API_URL='https://script.google.com/macros/s/AKfycbyYebLbh6EwNMN0EEbjBtZwEGCVaOmBepBfK38ZES2DA86Jao67XfZIe_070iD9pwHmpQ/exec';
-
-const SVC_ICONS=[
-  `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>`,
-  `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>`,
-  `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20"/></svg>`,
-  `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>`,
-  `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>`,
-  `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>`,
-  `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>`,
-  `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>`,
-  `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>`
-];
-
-const LI_SVG=`<svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>`;
-
-const TRACK_ICONS=[
-  `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 14l9-5-9-5-9 5 9 5z"/><path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0112 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/></svg>`,
-  `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>`
-];
-
-function esc(s){
-  if(s==null)return'';
-  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;');
-}
-
-async function loadData(){
-  const res=await fetch(API_URL);
-  if(!res.ok)throw new Error('API error');
-  return res.json();
-}
-
-async function init(){
-  let cfg;
-  try{cfg=await loadData();}
-  catch(e){
-    console.error('Failed to load site data',e);
-    document.getElementById('main-content').innerHTML='<div style="padding:200px 8vw;text-align:center;font-size:0.9rem;color:#5A534C;">Content is loading. Please refresh.</div>';
-    return;
-  }
-  const{site,hero,about,services,global:glob,team,vision,careers,contact,articles}=cfg;
-  document.title=`${site.name} \u2014 ${site.tagline}`;
-  document.querySelector('meta[name="description"]').content=site.description;
-  document.querySelector('meta[property="og:title"]').content=`${site.name} \u2014 ${site.tagline}`;
-  document.querySelector('meta[property="og:description"]').content=site.description;
-  document.body.dataset.email=site.email;
-  document.body.dataset.whatsapp=site.whatsapp;
-  const schemaEl=document.getElementById('schema-org');
-  if(schemaEl)schemaEl.textContent=JSON.stringify({
-    "@context":"https://schema.org","@type":"AccountingService",
-    "name":site.name,"alternateName":site.shortName,"url":site.url,
-    "description":site.description,
-    "address":{"@type":"PostalAddress","streetAddress":site.address.line1,
-      "addressLocality":site.address.city,"postalCode":site.address.pin,
-      "addressRegion":site.address.state,"addressCountry":"IN"},
-    "telephone":site.phone,"email":site.email
-  });
-  const featured=(articles||[]).filter(a=>a.featured).slice(0,3);
-  document.getElementById('main-content').innerHTML=
-    buildHero(hero,site)+
-    buildMarquee(services)+
-    buildAbout(about)+
-    buildServices(services)+
-    buildGlobal(glob)+
-    buildTeam(team)+
-    buildVision(vision)+
-    buildArticles(featured)+
-    buildCareers(careers,contact,site)+
-    buildCTA(contact,site);
-  document.getElementById('footer-wrap').innerHTML=
-    buildDisclaimer()+buildFooter(site)+buildWhatsApp(site);
-  initNavbar();
-  initHamburger();
-  initFadeUp();
-  initSplash();
-  initDisclaimer();
-  const copyEl=document.getElementById('footer-copy');
-  if(copyEl)copyEl.textContent='\u00A9 '+new Date().getFullYear()+' '+site.name+' \u00B7 All Rights Reserved';
-}
-
-function buildHero(h,site){
-  const stats=(h.stats||[]).map(s=>
-    `<div><div class="stat-num">${esc(s.num)}</div><div class="stat-label">${esc(s.label)}</div></div>`
-  ).join('');
-  return`
   <section class="hero" aria-label="Hero">
     <div class="hero-left">
-      <p class="hero-tag">${esc(h.tagline)}</p>
-      <h1 class="hero-h1">${esc(h.heading)}<br><em>${esc(h.headingEm)}</em></h1>
+      <p class="hero-tag">Kamesh Mali &amp; Associates</p>
+      <h1 class="hero-h1">Where Precision<br><em>Meets Purpose.</em></h1>
       <div class="hero-mobile-img" aria-hidden="true">
-        <img src="assets/hero-team.jpg" alt="${esc(site.name)} team" loading="eager">
+        <img src="assets/hero-team.jpg" alt="Kamesh Mali &amp; Associates team" loading="eager">
         <div class="hero-overlay"></div>
       </div>
-      <p class="hero-sub">${esc(h.subtext)}</p>
+      <p class="hero-sub">We partner with you to build solutions that anticipate tomorrow's challenges. As agile entrepreneurs, we listen deeply to craft strategies tailored to your unique needs. With a global presence and local insight, we deliver seamless cross-border support. Our seasoned professionals are committed to excellence, ensuring every client experience is exceptional. At our core, integrity drives us, fostering trust and lasting relationships with our clients, our people, and the communities we serve.</p>
       <div class="hero-actions">
         <a href="#services" class="btn-primary"><span>Explore Services</span></a>
         <button class="btn-outline" onclick="document.getElementById('callbackModal').classList.add('open')">Request a Call Back</button>
       </div>
-      <div class="hero-stats">${stats}</div>
+      <div class="hero-stats">
+        <div><div class="stat-num">7+</div><div class="stat-label">Global Markets</div></div>
+        <div><div class="stat-num">6</div><div class="stat-label">Senior Partners</div></div>
+        <div><div class="stat-num">40+</div><div class="stat-label">Years Combined</div></div>
+      </div>
     </div>
-    <div class="hero-right" role="img" aria-label="${esc(site.name)} professional team">
-      <img src="assets/hero-team.jpg" alt="${esc(site.name)} team" loading="eager" fetchpriority="high">
+    <div class="hero-right" role="img" aria-label="Kamesh Mali &amp; Associates professional team">
+      <img src="assets/hero-team.jpg" alt="Kamesh Mali &amp; Associates team" loading="eager" fetchpriority="high">
       <div class="hero-overlay" aria-hidden="true"></div>
     </div>
-  </section>`;
-}
+  </section>
 
-function buildMarquee(services){
-  const items=[...services,...services].map(s=>
-    `<div class="marquee-item">${esc(s.name)}<div class="marquee-dot"></div></div>`
-  ).join('');
-  return`<div class="marquee-bar" aria-hidden="true"><div class="marquee-track">${items}</div></div>`;
-}
+  <div class="marquee-bar" aria-hidden="true">
+    <div class="marquee-track">
+      <div class="marquee-item">Statutory Audit<div class="marquee-dot"></div></div>
+      <div class="marquee-item">Direct Taxation<div class="marquee-dot"></div></div>
+      <div class="marquee-item">International Tax<div class="marquee-dot"></div></div>
+      <div class="marquee-item">Management Consulting<div class="marquee-dot"></div></div>
+      <div class="marquee-item">Business Setup<div class="marquee-dot"></div></div>
+      <div class="marquee-item">Virtual CFO<div class="marquee-dot"></div></div>
+      <div class="marquee-item">Transfer Pricing<div class="marquee-dot"></div></div>
+      <div class="marquee-item">Investment Advisory<div class="marquee-dot"></div></div>
+      <div class="marquee-item">Global Compliance<div class="marquee-dot"></div></div>
+      <div class="marquee-item">Statutory Audit<div class="marquee-dot"></div></div>
+      <div class="marquee-item">Direct Taxation<div class="marquee-dot"></div></div>
+      <div class="marquee-item">International Tax<div class="marquee-dot"></div></div>
+      <div class="marquee-item">Management Consulting<div class="marquee-dot"></div></div>
+      <div class="marquee-item">Business Setup<div class="marquee-dot"></div></div>
+      <div class="marquee-item">Virtual CFO<div class="marquee-dot"></div></div>
+      <div class="marquee-item">Transfer Pricing<div class="marquee-dot"></div></div>
+      <div class="marquee-item">Investment Advisory<div class="marquee-dot"></div></div>
+      <div class="marquee-item">Global Compliance<div class="marquee-dot"></div></div>
+    </div>
+  </div>
 
-function buildAbout(a){
-  const pillars=(a.pillars||[]).map(p=>
-    `<div class="pillar"><div class="pillar-title">${esc(p.title)}</div><div class="pillar-desc">${esc(p.desc)}</div></div>`
-  ).join('');
-  const titleParts=esc(a.heading).replace(esc(a.headingEm),`<em>${esc(a.headingEm)}</em>`);
-  return`
   <section class="about" id="about" aria-labelledby="about-title">
     <div class="about-img-wrap fade-up">
       <div class="about-img-frame" aria-hidden="true"></div>
@@ -563,27 +447,18 @@ function buildAbout(a){
     </div>
     <div class="about-content fade-up">
       <p class="section-tag">Who We Are</p>
-      <h2 class="section-title" id="about-title">${titleParts}</h2>
-      <p class="about-body">${esc(a.body1)}</p>
-      <p class="about-body" style="margin-top:0;">${esc(a.body2)}</p>
-      <div class="about-pillars">${pillars}</div>
-    </div>
-  </section>`;
-}
-
-function buildServices(services){
-  const cards=(services||[]).map((s,i)=>`
-    <article class="service-card fade-up">
-      <div class="service-card-inner">
-        <span class="service-num">${esc(s.num)}</span>
-        <div class="service-icon" aria-hidden="true">${SVC_ICONS[i]||SVC_ICONS[0]}</div>
-        <h3 class="service-name">${esc(s.name)}</h3>
-        <div class="service-divider" aria-hidden="true"></div>
-        <p class="service-desc">${esc(s.desc)}</p>
-        <div class="service-tags">${(s.tags||[]).map(t=>`<span class="service-tag">${esc(t)}</span>`).join('')}</div>
+      <h2 class="section-title" id="about-title">A One-Stop Solution for <em>Every Financial Need</em></h2>
+      <p class="about-body">KMA is a Pune-based Chartered Accountancy firm offering a complete suite of consultancy and compliance services. We eliminate the need for multiple service providers by combining traditional financial expertise with modern automation ensuring accuracy, honesty, and deep domain knowledge at every step.</p>
+      <p class="about-body" style="margin-top:0;">Our young, result-oriented team takes ownership of outcomes, strives to exceed expectations, and brings diverse industry experience across sectors and geographies serving clients from India to North America, Europe, and the UAE.</p>
+      <div class="about-pillars">
+        <div class="pillar"><div class="pillar-title">Accuracy</div><div class="pillar-desc">Precision-first across every engagement.</div></div>
+        <div class="pillar"><div class="pillar-title">Honesty</div><div class="pillar-desc">Transparent, ethical counsel you can rely on.</div></div>
+        <div class="pillar"><div class="pillar-title">Innovation</div><div class="pillar-desc">Modern technology driving efficiency.</div></div>
+        <div class="pillar"><div class="pillar-title">Accessibility</div><div class="pillar-desc">Always available during critical moments.</div></div>
       </div>
-    </article>`).join('');
-  return`
+    </div>
+  </section>
+
   <section class="services" id="services" aria-labelledby="services-title">
     <div class="services-header fade-up">
       <div>
@@ -591,59 +466,33 @@ function buildServices(services){
         <h2 class="section-title" id="services-title">Comprehensive <em>Services</em><br>Under One Roof</h2>
       </div>
       <div>
-        <p class="services-intro">From statutory audits and direct taxation to transfer pricing and Virtual CFO mandates &mdash; we cover the full financial and compliance spectrum for businesses of every scale, sector, and geography.</p>
+        <p class="services-intro">From statutory audits and direct taxation to transfer pricing and Virtual CFO mandates, we cover the full financial and compliance spectrum for businesses of every scale, sector, and geography.</p>
         <div class="services-stat-row">
-          <div><div class="s-stat-num">${services.length}</div><div class="s-stat-label">Core Areas</div></div>
+          <div><div class="s-stat-num" id="svc-count">9</div><div class="s-stat-label">Core Areas</div></div>
           <div><div class="s-stat-num">7+</div><div class="s-stat-label">Countries</div></div>
           <div><div class="s-stat-num">40+</div><div class="s-stat-label">Yrs Experience</div></div>
         </div>
       </div>
     </div>
-    <div class="services-grid">${cards}</div>
+    <div class="services-grid" id="services-grid"></div>
     <div class="services-bottom">
       <p class="services-bottom-text">Every service is delivered with the rigour of experienced professionals and the personal attention of a boutique firm.</p>
       <a href="#contact" class="btn-ghost">Discuss Your Requirements <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
     </div>
-  </section>`;
-}
+  </section>
 
-function buildGlobal(g){
-  const chips=(g.countries||[]).map(c=>
-    `<div class="country-chip"><span class="flag">${c.flag}</span>${esc(c.name)}</div>`
-  ).join('');
-  return`
   <section class="global" id="global" aria-labelledby="global-title">
     <div class="fade-up">
       <p class="section-tag">Our Reach</p>
       <h2 class="section-title" id="global-title">Global Presence,<br><em>Local Expertise</em></h2>
-      <p class="global-body">${esc(g.body)}</p>
-      <div class="countries">${chips}</div>
+      <p class="global-body">KMA serves clients across seven countries, bringing extensive professional experience with the agility and personal attention of a boutique firm. Our diverse team understands your regulatory landscape and cultural nuances, whether you operate locally or internationally.</p>
+      <div class="countries" id="countries-list"></div>
     </div>
     <div class="fade-up">
       <img class="global-img" src="assets/global-skyline.png" alt="Global presence" loading="lazy" width="800" height="460">
     </div>
-  </section>`;
-}
+  </section>
 
-function buildTeam(team){
-  const allCards=(team||[]).map(m=>`
-    <article class="team-card fade-up">
-      <div class="team-img-wrap">
-        <img src="${esc(m.photo)}" alt="${esc(m.name)}" loading="lazy">
-      </div>
-      <div class="team-info">
-        <div class="team-role">${esc(m.role)}</div>
-        <div class="team-name">${esc(m.name)}</div>
-        <div class="team-bio">${esc(m.bio)}</div>
-        <div class="team-footer">
-          <div class="team-exp">${esc(m.exp)}</div>
-          <a href="${esc(m.linkedin)}" target="_blank" rel="noopener noreferrer" class="linkedin-btn">${LI_SVG} LinkedIn</a>
-        </div>
-      </div>
-    </article>`);
-  const topRow=allCards.slice(0,3).join('');
-  const bottomRow=allCards.slice(3).join('');
-  return`
   <section class="team" id="team" aria-labelledby="team-title">
     <div class="team-header fade-up">
       <p class="section-tag">Leadership</p>
@@ -655,46 +504,19 @@ function buildTeam(team){
         </div>
       </div>
     </div>
-    <div class="team-grid">${topRow}</div>
-    ${bottomRow?`<div class="team-grid-bottom">${bottomRow}</div>`:''}
-  </section>`;
-}
+    <div class="team-grid" id="team-grid-top"></div>
+    <div class="team-grid-bottom" id="team-grid-bottom"></div>
+  </section>
 
-function buildVision(v){
-  const values=(v.values||[]).map(val=>`
-    <div class="vision-value">
-      <div class="vision-value-title">${esc(val.title)}</div>
-      <div class="vision-value-desc">${esc(val.desc)}</div>
-    </div>`).join('');
-  return`
   <section class="vision" aria-labelledby="vision-title">
     <div class="fade-up" style="position:relative;z-index:1;">
       <p class="section-tag">Our Direction</p>
       <h2 class="section-title" id="vision-title">Built for the<br><em>Future</em> of Finance</h2>
-      <p class="vision-body">${esc(v.body)}</p>
+      <p class="vision-body">We are building a forward-looking firm known for excellence, trust, and strong global client partnerships, delivering insightful, efficient, and compliant financial solutions driven by innovation and domain expertise.</p>
     </div>
-    <div class="vision-values fade-up">${values}</div>
-  </section>`;
-}
+    <div class="vision-values fade-up" id="vision-values"></div>
+  </section>
 
-function buildArticles(featured){
-  const icon=`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>`;
-  const cards=featured.length?featured.map(a=>`
-    <a class="article-card fade-up" href="articles.html?slug=${esc(a.slug)}">
-      ${a.cover
-        ?`<div class="article-img-wrap"><img src="${esc(a.cover)}" alt="${esc(a.title)}" loading="lazy"></div>`
-        :`<div class="article-img-placeholder">${icon}</div>`}
-      <div class="article-body">
-        <div class="article-meta">
-          <span class="article-cat">${esc(a.category||'')}</span>
-          <span class="article-date">${esc(a.date||'')}</span>
-        </div>
-        <h3 class="article-title">${esc(a.title)}</h3>
-        <p class="article-excerpt">${esc(a.excerpt||'')}</p>
-        <span class="article-read-more">Read More <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
-      </div>
-    </a>`).join(''):`<div style="grid-column:1/-1;text-align:center;padding:2rem;color:var(--grey-mid);font-size:0.82rem;">Articles coming soon.</div>`;
-  return`
   <section class="articles" id="articles" aria-labelledby="articles-title">
     <div class="articles-header fade-up">
       <div>
@@ -703,30 +525,23 @@ function buildArticles(featured){
       </div>
       <a href="articles.html" class="btn-outline">View All Articles</a>
     </div>
-    <div class="articles-grid">${cards}</div>
+    <div class="articles-grid" id="articles-grid"></div>
     <div class="articles-all fade-up">
       <a href="articles.html" class="btn-ghost-light">Browse All Articles <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
     </div>
-  </section>`;
-}
+  </section>
 
-function buildCareers(careers,contact,site){
-  const tracks=(careers.tracks||[]).map((t,i)=>`
-    <div class="career-track fade-up">
-      <div class="track-icon" aria-hidden="true">${TRACK_ICONS[i]||TRACK_ICONS[0]}</div>
-      <h3 class="track-title">${esc(t.title)}</h3>
-      <p class="track-desc">${esc(t.desc)}</p>
-    </div>`).join('');
-  return`
   <section class="careers" id="careers" aria-labelledby="careers-title">
     <div class="careers-header">
       <div class="fade-up">
         <p class="section-tag">Join Our Team</p>
         <h2 class="section-title" id="careers-title">Build Your Career<br><em>With KMA</em></h2>
       </div>
-      <div class="fade-up"><p class="careers-intro">${esc(careers.intro)}</p></div>
+      <div class="fade-up">
+        <p class="careers-intro">We are always looking for driven, curious professionals who want to grow alongside a firm that values excellence, integrity, and innovation. Whether you are beginning your articleship or are an experienced professional, KMA offers a culture where your work genuinely matters.</p>
+      </div>
     </div>
-    <div class="career-tracks">${tracks}</div>
+    <div class="career-tracks" id="career-tracks"></div>
     <div class="careers-form fade-up">
       <div class="form-title">Apply Now</div>
       <p class="form-subtitle">Fill in the details below and we will get in touch within two working days. All applications are reviewed directly by our partners.</p>
@@ -759,192 +574,387 @@ function buildCareers(careers,contact,site){
         <p><strong>Application received.</strong><br>Our partners will review your profile and reach out within two working days.</p>
       </div>
     </div>
-  </section>`;
-}
+  </section>
 
-function buildCTA(contact,site){
-  const partnerItems=(contact.partners||[]).map(p=>`
-    <div class="contact-item">
-      <div class="contact-label">${esc(p.label)}</div>
-      <div class="contact-name">${esc(p.name)}</div>
-      <a href="mailto:${esc(p.email)}" class="contact-detail">${esc(p.email)}</a>
-      <a href="tel:${esc(p.phone.replace(/\s/g,''))}" class="contact-detail">${esc(p.phone)}</a>
-    </div>`).join('');
-  return`
   <section class="cta-section" id="contact" aria-labelledby="cta-title">
     <p class="section-tag">Get in Touch</p>
     <h2 class="section-title" id="cta-title" style="margin-bottom:0;">Let's Build Something<br><em>Exceptional Together</em></h2>
-    <p class="cta-sub">Whether you're a startup, an SME, or a global enterprise &mdash; KMA brings the expertise, network, and commitment to make your financial journey seamless and well-structured.</p>
+    <p class="cta-sub">Whether you're a startup, an SME, or a global enterprise, KMA brings the expertise, network, and commitment to make your financial journey seamless and well-structured.</p>
     <div class="cta-action-row">
-      <a href="mailto:${esc(site.email)}" class="btn-primary"><span>Email Us</span></a>
+      <a href="mailto:contactus@kmaca.in" class="btn-primary"><span>Email Us</span></a>
       <button class="btn-callback" onclick="document.getElementById('callbackModal').classList.add('open')">
         <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.69 12 19.79 19.79 0 011.61 3.47 2 2 0 013.6 1.27h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.91 9a16 16 0 006.09 6.09l1.8-1.8a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
         Request a Call Back
       </button>
     </div>
-    <address class="cta-contacts">
-      ${partnerItems}
-      <div class="contact-item">
-        <div class="contact-label">Office</div>
-        <div class="contact-name">Pune Headquarters</div>
-        <span class="contact-detail">${esc(site.address.line1)}</span>
-        <span class="contact-detail">${esc(site.address.line2)}, ${esc(site.address.city)} &ndash; ${esc(site.address.pin)}</span>
-      </div>
-    </address>
-  </section>`;
-}
+    <address class="cta-contacts" id="cta-contacts"></address>
+  </section>
 
-function buildDisclaimer(){
-  return`<div class="disclaimer-bar"><p class="disclaimer-text"><strong>Professional Disclaimer</strong>Kamesh Mali &amp; Associates is a registered Chartered Accountancy firm. Information on this website is for general informational purposes only and does not constitute professional advice or solicitation of work. Viewing this website does not create a client-professional relationship. This website does not constitute solicitation or advertisement under ICAI regulations.</p></div>`;
-}
+</main>
 
-function buildFooter(site){
-  const svgs={
-    linkedin:`<svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>`,
-    instagram:`<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>`,
-    twitter:`<svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>`
-  };
-  const socials=Object.entries(site.socialLinks||{}).map(([k,u])=>
-    `<a href="${esc(u)}" class="social-link" rel="noopener noreferrer">${svgs[k]||''} ${k.charAt(0).toUpperCase()+k.slice(1)}</a>`
-  ).join('');
-  return`
+<div id="footer-wrap">
+  <div class="disclaimer-bar">
+    <p class="disclaimer-text"><strong>Professional Disclaimer</strong>Kamesh Mali &amp; Associates is a registered Chartered Accountancy firm. Information on this website is for general informational purposes only and does not constitute professional advice or solicitation of work. Viewing this website does not create a client-professional relationship. This website does not constitute solicitation or advertisement under ICAI regulations.</p>
+  </div>
   <footer>
     <div class="footer-top">
       <div class="footer-brand">
-        <img src="assets/logo.png" alt="${esc(site.name)}" class="footer-logo-img" loading="lazy" onerror="this.style.display='none'">
-        <div class="footer-tagline">${esc(site.name)} &middot; ${esc(site.tagline)}</div>
-        <p class="footer-brand-desc">${esc(site.description)}</p>
+        <img src="assets/logo.png" alt="Kamesh Mali &amp; Associates" class="footer-logo-img" loading="lazy" onerror="this.style.display='none'">
+        <div class="footer-tagline">Kamesh Mali &amp; Associates &middot; Chartered Accountants</div>
       </div>
       <div>
         <div class="footer-nav-label">Quick Links</div>
         <nav class="footer-nav">
-          <a href="#about">About Us</a><a href="#services">Services</a>
-          <a href="#global">Global Reach</a><a href="#team">Our Team</a>
-          <a href="articles.html">Insights</a><a href="#careers">Careers</a>
+          <a href="#about">About Us</a>
+          <a href="#services">Services</a>
+          <a href="#global">Global Reach</a>
+          <a href="#team">Our Team</a>
+          <a href="articles.html">Insights</a>
+          <a href="#careers">Careers</a>
           <a href="#contact">Contact</a>
         </nav>
       </div>
       <div>
         <div class="footer-socials-label">Connect With Us</div>
-        <div class="footer-socials">${socials}</div>
+        <div class="footer-socials" id="footer-socials"></div>
       </div>
     </div>
     <div class="footer-bottom">
       <div class="footer-copy" id="footer-copy"></div>
-      <address class="footer-addr">${esc(site.address.line1)}, ${esc(site.address.line2)}<br>${esc(site.address.city)} &ndash; ${esc(site.address.pin)}, ${esc(site.address.state)}</address>
     </div>
-  </footer>`;
+  </footer>
+</div>
+
+<a href="https://wa.me/917796467796?text=Hello%20KMA" target="_blank" rel="noopener noreferrer" class="whatsapp-fab" aria-label="Chat on WhatsApp">
+  <div class="whatsapp-tooltip" aria-hidden="true">Chat on WhatsApp</div>
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<div class="callback-modal" id="callbackModal" role="dialog" aria-modal="true" aria-labelledby="callbackTitle">
+  <div class="callback-box">
+    <button class="callback-close" onclick="document.getElementById('callbackModal').classList.remove('open')" aria-label="Close">&#x2715;</button>
+    <div class="callback-title" id="callbackTitle">Request a Call Back</div>
+    <p class="callback-sub">Leave your details and we'll call you within one working day.</p>
+    <div id="cbFormWrap">
+      <div class="cb-form-group"><label class="cb-label" for="cb_name">Your Name *</label><input type="text" class="form-input" id="cb_name" placeholder="Full name" autocomplete="name"></div>
+      <div class="cb-form-group"><label class="cb-label" for="cb_phone">Phone Number *</label><input type="tel" class="form-input" id="cb_phone" placeholder="+91 XXXXX XXXXX" autocomplete="tel"></div>
+      <div class="cb-form-group"><label class="cb-label" for="cb_time">Best Time to Call</label>
+        <select class="form-select form-input" id="cb_time">
+          <option value="">Anytime</option>
+          <option>Morning (9am to 12pm)</option>
+          <option>Afternoon (12pm to 4pm)</option>
+          <option>Evening (4pm to 7pm)</option>
+        </select>
+      </div>
+      <div class="cb-form-group"><label class="cb-label" for="cb_subject">Subject (optional)</label><input type="text" class="form-input" id="cb_subject" placeholder="e.g. GST advisory, Transfer Pricing"></div>
+      <div style="margin-top:1.4rem;display:flex;justify-content:flex-end;"><button class="btn-primary" onclick="submitCallback()"><span>Request Call Back</span></button></div>
+    </div>
+    <div class="success-msg" id="cbSuccess">
+      <div class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div>
+      <p><strong>We'll call you back shortly.</strong><br>A partner will reach out within one working day.</p>
+    </div>
+  </div>
+</div>
+
+<div class="cookie-disclaimer" id="cookieDisclaimer">
+  <p class="cookie-text">
+    <strong style="color:rgba(255,255,255,0.9);font-size:0.7rem;text-transform:uppercase;letter-spacing:0.1em;">Professional Disclaimer</strong><br>
+    Information on this website is for general informational purposes only and does not constitute professional advice or solicitation. No client-professional relationship is created by visiting this site.
+  </p>
+  <button class="cookie-accept" onclick="dismissDisclaimer()">I Understand</button>
+</div>
+
+<script>
+const API_URL = 'https://script.google.com/macros/s/AKfycbyYebLbh6EwNMN0EEbjBtZwEGCVaOmBepBfK38ZES2DA86Jao67XfZIe_070iD9pwHmpQ/exec';
+
+const SVC_ICONS = [
+  `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>`,
+  `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>`,
+  `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20"/></svg>`,
+  `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>`,
+  `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>`,
+  `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>`,
+  `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>`,
+  `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>`,
+  `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>`
+];
+
+const LI_SVG = `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>`;
+
+const TRACK_ICONS = [
+  `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 14l9-5-9-5-9 5 9 5z"/><path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0112 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/></svg>`,
+  `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>`
+];
+
+function esc(s) {
+  if (s == null) return '';
+  return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;');
 }
 
-function buildWhatsApp(site){
-  return`
-  <a href="https://wa.me/${esc(site.whatsapp)}?text=Hello%20KMA" target="_blank" rel="noopener noreferrer" class="whatsapp-fab" aria-label="Chat on WhatsApp">
-    <div class="whatsapp-tooltip" aria-hidden="true">Chat on WhatsApp</div>
-    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-  </a>`;
+async function loadData() {
+  const res = await fetch(API_URL);
+  if (!res.ok) throw new Error('API error');
+  return res.json();
 }
 
-function initSplash(){
-  const splash=document.getElementById('splash');
-  function hide(){splash.classList.add('hidden');}
-  if(document.readyState==='complete')setTimeout(hide,1900);
-  else window.addEventListener('load',()=>setTimeout(hide,1900));
+async function init() {
+  let cfg;
+  try {
+    cfg = await loadData();
+  } catch(e) {
+    console.error('Failed to load site data', e);
+    renderFallback();
+    return;
+  }
+  const { services, team, articles, global: glob, vision, contact, site } = cfg;
+
+  document.getElementById('schema-org').textContent = JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "AccountingService",
+    "name": "Kamesh Mali & Associates",
+    "alternateName": "KMA",
+    "url": "https://kmaca.in",
+    "description": "KMA is a technology-enabled Chartered Accountancy firm delivering end-to-end financial, audit, tax, and advisory solutions.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": site?.address?.line1 || "805, One Place",
+      "addressLocality": site?.address?.city || "Pune",
+      "postalCode": site?.address?.pin || "411040",
+      "addressRegion": site?.address?.state || "Maharashtra",
+      "addressCountry": "IN"
+    },
+    "telephone": site?.phone || "+91 77964 67796",
+    "email": "contactus@kmaca.in"
+  });
+
+  renderServices(services || []);
+  renderCountries(glob?.countries || []);
+  renderTeam(team || []);
+  renderVision(vision?.values || []);
+  renderArticles((articles || []).filter(a => a.featured).slice(0, 3));
+  renderCareerTracks(cfg?.careers?.tracks || []);
+  renderContacts(contact?.partners || []);
+  renderFooterSocials(site?.socialLinks || {});
+
+  document.getElementById('footer-copy').textContent = '\u00A9 ' + new Date().getFullYear() + ' Kamesh Mali & Associates \u00B7 All Rights Reserved';
+
+  initNavbar();
+  initHamburger();
+  initFadeUp();
+  initSplash();
+  initDisclaimer();
 }
 
-function initNavbar(){
-  const nb=document.getElementById('navbar');
-  let lastY=0,ticking=false;
-  window.addEventListener('scroll',()=>{
-    if(ticking)return;
-    requestAnimationFrame(()=>{
-      const y=window.scrollY;
-      nb.classList.toggle('scrolled',y>40);
-      if(window.innerWidth<=900){
-        if(y>80)nb.classList.toggle('nav-hidden',y>lastY);
+function renderFallback() {
+  document.getElementById('services-grid').innerHTML = '<div style="grid-column:1/-1;padding:2rem;text-align:center;color:rgba(181,175,168,0.6);font-size:0.82rem;">Services loading...</div>';
+}
+
+function renderServices(services) {
+  document.getElementById('svc-count').textContent = services.length || 9;
+  document.getElementById('services-grid').innerHTML = services.map((s, i) => `
+    <article class="service-card fade-up">
+      <div class="service-card-inner">
+        <span class="service-num">${esc(s.num)}</span>
+        <div class="service-icon" aria-hidden="true">${SVC_ICONS[i] || SVC_ICONS[0]}</div>
+        <h3 class="service-name">${esc(s.name)}</h3>
+        <div class="service-divider" aria-hidden="true"></div>
+        <p class="service-desc">${esc(s.desc)}</p>
+        <div class="service-tags">${(s.tags || []).map(t => `<span class="service-tag">${esc(t)}</span>`).join('')}</div>
+      </div>
+    </article>`).join('');
+}
+
+function renderCountries(countries) {
+  document.getElementById('countries-list').innerHTML = countries.map(c =>
+    `<div class="country-chip"><span class="flag">${c.flag}</span>${esc(c.name)}</div>`
+  ).join('');
+}
+
+function renderTeam(team) {
+  const cards = team.map(m => `
+    <article class="team-card fade-up">
+      <div class="team-img-wrap">
+        <img src="${esc(m.photo)}" alt="${esc(m.name)}" loading="lazy">
+      </div>
+      <div class="team-info">
+        <div class="team-role">${esc(m.role)}</div>
+        <div class="team-name">${esc(m.name)}</div>
+        <div class="team-bio">${esc(m.bio)}</div>
+        <div class="team-footer">
+          <div class="team-exp">${esc(m.exp)}</div>
+          <a href="${esc(m.linkedin)}" target="_blank" rel="noopener noreferrer" class="linkedin-btn">${LI_SVG} LinkedIn</a>
+        </div>
+      </div>
+    </article>`);
+  document.getElementById('team-grid-top').innerHTML = cards.slice(0, 3).join('');
+  const bottomEl = document.getElementById('team-grid-bottom');
+  if (cards.length > 3) {
+    bottomEl.innerHTML = cards.slice(3).join('');
+  } else {
+    bottomEl.style.display = 'none';
+  }
+}
+
+function renderVision(values) {
+  document.getElementById('vision-values').innerHTML = values.map(v => `
+    <div class="vision-value">
+      <div class="vision-value-title">${esc(v.title)}</div>
+      <div class="vision-value-desc">${esc(v.desc)}</div>
+    </div>`).join('');
+}
+
+function renderArticles(featured) {
+  const icon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>`;
+  document.getElementById('articles-grid').innerHTML = featured.length
+    ? featured.map(a => `
+      <a class="article-card fade-up" href="articles.html?slug=${esc(a.slug)}">
+        ${a.cover
+          ? `<div class="article-img-wrap"><img src="${esc(a.cover)}" alt="${esc(a.title)}" loading="lazy"></div>`
+          : `<div class="article-img-placeholder">${icon}</div>`}
+        <div class="article-body">
+          <div class="article-meta">
+            <span class="article-cat">${esc(a.category || '')}</span>
+            <span class="article-date">${esc(a.date || '')}</span>
+          </div>
+          <h3 class="article-title">${esc(a.title)}</h3>
+          <p class="article-excerpt">${esc(a.excerpt || '')}</p>
+          <span class="article-read-more">Read More <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </div>
+      </a>`).join('')
+    : `<div style="grid-column:1/-1;text-align:center;padding:2rem;color:var(--grey-mid);font-size:0.82rem;">Articles coming soon.</div>`;
+}
+
+function renderCareerTracks(tracks) {
+  document.getElementById('career-tracks').innerHTML = tracks.map((t, i) => `
+    <div class="career-track fade-up">
+      <div class="track-icon" aria-hidden="true">${TRACK_ICONS[i] || TRACK_ICONS[0]}</div>
+      <h3 class="track-title">${esc(t.title)}</h3>
+      <p class="track-desc">${esc(t.desc)}</p>
+    </div>`).join('');
+}
+
+function renderContacts(partners) {
+  document.getElementById('cta-contacts').innerHTML = partners.map(p => `
+    <div class="contact-item">
+      <div class="contact-label">${esc(p.label)}</div>
+      <div class="contact-name">${esc(p.name)}</div>
+      <a href="mailto:${esc(p.email)}" class="contact-detail">${esc(p.email)}</a>
+      <a href="tel:${esc(p.phone.replace(/\s/g, ''))}" class="contact-detail">${esc(p.phone)}</a>
+    </div>`).join('');
+}
+
+function renderFooterSocials(links) {
+  const svgs = {
+    linkedin: `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>`,
+    instagram: `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>`,
+    twitter: `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>`
+  };
+  document.getElementById('footer-socials').innerHTML = Object.entries(links)
+    .filter(([, u]) => u && u !== '#')
+    .map(([k, u]) => `<a href="${esc(u)}" class="social-link" rel="noopener noreferrer">${svgs[k] || ''} ${k.charAt(0).toUpperCase() + k.slice(1)}</a>`)
+    .join('');
+}
+
+function initSplash() {
+  const splash = document.getElementById('splash');
+  function hide() { splash.classList.add('hidden'); }
+  if (document.readyState === 'complete') setTimeout(hide, 1900);
+  else window.addEventListener('load', () => setTimeout(hide, 1900));
+}
+
+function initNavbar() {
+  const nb = document.getElementById('navbar');
+  let lastY = 0, ticking = false;
+  window.addEventListener('scroll', () => {
+    if (ticking) return;
+    requestAnimationFrame(() => {
+      const y = window.scrollY;
+      nb.classList.toggle('scrolled', y > 40);
+      if (window.innerWidth <= 900) {
+        if (y > 80) nb.classList.toggle('nav-hidden', y > lastY);
         else nb.classList.remove('nav-hidden');
       }
-      lastY=y;ticking=false;
+      lastY = y; ticking = false;
     });
-    ticking=true;
-  },{passive:true});
+    ticking = true;
+  }, { passive: true });
 }
 
-function initHamburger(){
-  const btn=document.getElementById('hamburger');
-  const menu=document.getElementById('mobile-menu');
-  btn.addEventListener('click',()=>{
-    const open=menu.classList.toggle('open');
-    btn.setAttribute('aria-expanded',String(open));
+function initHamburger() {
+  const btn = document.getElementById('hamburger');
+  const menu = document.getElementById('mobile-menu');
+  btn.addEventListener('click', () => {
+    const open = menu.classList.toggle('open');
+    btn.setAttribute('aria-expanded', String(open));
   });
-  menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
+  menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
     menu.classList.remove('open');
-    btn.setAttribute('aria-expanded','false');
+    btn.setAttribute('aria-expanded', 'false');
   }));
 }
 
-function initFadeUp(){
-  const obs=new IntersectionObserver(entries=>{
-    entries.forEach(e=>{
-      if(e.isIntersecting){setTimeout(()=>e.target.classList.add('visible'),80);obs.unobserve(e.target);}
+function initFadeUp() {
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { setTimeout(() => e.target.classList.add('visible'), 80); obs.unobserve(e.target); }
     });
-  },{threshold:0.1});
-  document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
 }
 
-function initDisclaimer(){
-  if(!sessionStorage.getItem('kma_disclaimer'))
-    setTimeout(()=>document.getElementById('cookieDisclaimer').classList.add('show'),2400);
+function initDisclaimer() {
+  if (!sessionStorage.getItem('kma_disclaimer'))
+    setTimeout(() => document.getElementById('cookieDisclaimer').classList.add('show'), 2400);
 }
 
-function dismissDisclaimer(){
-  sessionStorage.setItem('kma_disclaimer','1');
+function dismissDisclaimer() {
+  sessionStorage.setItem('kma_disclaimer', '1');
   document.getElementById('cookieDisclaimer').classList.remove('show');
 }
 
-async function submitCareerForm(){
-  const name=document.getElementById('cf_name').value.trim();
-  const email=document.getElementById('cf_email').value.trim();
-  const phone=document.getElementById('cf_phone').value.trim();
-  const type=document.getElementById('cf_type').value;
-  const errEl=document.getElementById('careerError');
-  errEl.style.display='none';
-  if(!name||!email||!phone||!type){
-    errEl.textContent='Please fill in all required fields.';
-    errEl.style.display='block';
+async function submitCareerForm() {
+  const name = document.getElementById('cf_name').value.trim();
+  const email = document.getElementById('cf_email').value.trim();
+  const phone = document.getElementById('cf_phone').value.trim();
+  const type = document.getElementById('cf_type').value;
+  const errEl = document.getElementById('careerError');
+  errEl.style.display = 'none';
+  if (!name || !email || !phone || !type) {
+    errEl.textContent = 'Please fill in all required fields.';
+    errEl.style.display = 'block';
     return;
   }
-  const btn=document.getElementById('careerSubmitBtn');
-  btn.disabled=true;
-  btn.querySelector('span').textContent='Submitting\u2026';
-  const payload={
-    action:'career',
-    name,email,phone,type,
-    qualification:document.getElementById('cf_qual').value.trim(),
-    experience:document.getElementById('cf_exp_val').value.trim(),
-    area:document.getElementById('cf_area').value.trim(),
-    note:document.getElementById('cf_note').value.trim(),
-    timestamp:new Date().toISOString()
+  const btn = document.getElementById('careerSubmitBtn');
+  btn.disabled = true;
+  btn.querySelector('span').textContent = 'Submitting\u2026';
+  const payload = {
+    action: 'career',
+    name, email, phone, type,
+    qualification: document.getElementById('cf_qual').value.trim(),
+    experience: document.getElementById('cf_exp_val').value.trim(),
+    area: document.getElementById('cf_area').value.trim(),
+    note: document.getElementById('cf_note').value.trim(),
+    timestamp: new Date().toISOString()
   };
-  try{
-    await fetch(API_URL,{method:'POST',body:JSON.stringify(payload)});
-  }catch(e){}
-  document.getElementById('careerFormWrap').style.display='none';
-  document.getElementById('careerSuccess').style.display='block';
+  try {
+    await fetch(API_URL, { method: 'POST', body: JSON.stringify(payload) });
+  } catch(e) {}
+  document.getElementById('careerFormWrap').style.display = 'none';
+  document.getElementById('careerSuccess').style.display = 'block';
 }
 
-function submitCallback(){
-  const name=document.getElementById('cb_name').value.trim();
-  const phone=document.getElementById('cb_phone').value.trim();
-  if(!name||!phone){alert('Please enter your name and phone number.');return;}
-  const email=document.body.dataset.email||'kamesh@kmaca.in';
-  const subject=encodeURIComponent('Call Back Request \u2013 KMA');
-  const body=encodeURIComponent(
-    'Name: '+name+'\nPhone: '+phone+'\nBest Time: '+(document.getElementById('cb_time').value||'Anytime')+'\n'+
-    'Subject: '+(document.getElementById('cb_subject').value||'General Enquiry')
+function submitCallback() {
+  const name = document.getElementById('cb_name').value.trim();
+  const phone = document.getElementById('cb_phone').value.trim();
+  if (!name || !phone) { alert('Please enter your name and phone number.'); return; }
+  const subject = encodeURIComponent('Call Back Request \u2013 KMA');
+  const body = encodeURIComponent(
+    'Name: ' + name + '\nPhone: ' + phone + '\nBest Time: ' + (document.getElementById('cb_time').value || 'Anytime') + '\n' +
+    'Subject: ' + (document.getElementById('cb_subject').value || 'General Enquiry')
   );
-  window.open('mailto:'+email+'?subject='+subject+'&body='+body,'_blank');
-  document.getElementById('cbFormWrap').style.display='none';
-  document.getElementById('cbSuccess').style.display='block';
+  window.open('mailto:contactus@kmaca.in?subject=' + subject + '&body=' + body, '_blank');
+  document.getElementById('cbFormWrap').style.display = 'none';
+  document.getElementById('cbSuccess').style.display = 'block';
 }
 
 init();
