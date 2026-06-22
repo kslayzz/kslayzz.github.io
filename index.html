@@ -1,20 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Google tag (gtag.js) --> 
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-BBF9N922HM"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-BBF9N922HM');
-</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-<meta http-equiv="Pragma" content="no-cache">
-<meta http-equiv="Expires" content="0">
 <title>Kamesh Mali &amp; Associates — Chartered Accountants</title>
 <meta name="description" content="KMA is a technology-enabled CA firm delivering end-to-end financial, audit, tax, and advisory solutions — built on accuracy, honesty, and deep expertise.">
 <meta property="og:type" content="website">
@@ -24,9 +12,14 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="canonical" href="https://kmaca.in/">
 <link rel="icon" type="image/png" href="assets/logo.png">
+<link rel="preload" as="image" href="assets/hero-team.png" fetchpriority="high">
+<link rel="preload" as="image" href="assets/logo.png" fetchpriority="high">
+<link rel="dns-prefetch" href="https://script.google.com">
+<link rel="dns-prefetch" href="https://www.googletagmanager.com">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
 <script type="application/ld+json" id="schema-org"></script>
 <style>
 :root{
@@ -77,7 +70,7 @@ body{font-family:'Montserrat',sans-serif;background:var(--white);color:var(--bla
 .hero-stats{display:flex;gap:2.5rem;margin-top:3.5rem;padding-top:2rem;border-top:1px solid var(--grey-light);}
 .stat-num{font-family:'Cormorant Garamond',serif;font-size:2.4rem;font-weight:600;color:var(--red);line-height:1;}
 .stat-label{font-size:0.62rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--grey-mid);margin-top:4px;}
-.hero-right{position:relative;overflow:hidden;}
+.hero-right{position:relative;overflow:hidden;background:var(--off-white);}
 .hero-right img{width:100%;height:100%;object-fit:cover;object-position:center top;filter:brightness(0.88) saturate(0.9);}
 .hero-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(139,30,30,0.45) 0%,rgba(26,22,20,0.3) 100%);mix-blend-mode:multiply;}
 .hero-mobile-img{display:none;}
@@ -104,7 +97,7 @@ section{position:relative;}
 .about{padding:110px 8vw;display:grid;grid-template-columns:1fr 1fr;gap:8vw;align-items:start;}
 .about-img-wrap{position:relative;}
 .about-img-inner{position:relative;width:100%;}
-.about-img-inner img{width:100%;height:auto;display:block;object-fit:cover;object-position:center center;}
+.about-img-inner img{width:100%;height:auto;display:block;object-fit:cover;object-position:center center;background:var(--off-white);}
 .about-img-frame{position:absolute;top:-14px;left:-14px;right:14px;bottom:14px;border:1px solid var(--red);z-index:-1;opacity:0.35;pointer-events:none;}
 .about-content{padding-top:0.5rem;}
 .about-body{font-size:0.88rem;line-height:1.9;color:var(--grey-dark);margin:1.6rem 0 2rem;text-align:justify;}
@@ -154,7 +147,7 @@ section{position:relative;}
 .country-chip{font-size:0.63rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:7px 14px;border:1px solid var(--grey-light);color:var(--grey-dark);background:var(--white);transition:all 0.2s;cursor:default;font-family:'Segoe UI Emoji','Apple Color Emoji','Noto Color Emoji',sans-serif;}
 .country-chip .flag{font-family:'Segoe UI Emoji','Apple Color Emoji','Noto Color Emoji','Twemoji Mozilla',sans-serif;font-size:1rem;display:inline-block;margin-right:6px;font-style:normal;}
 .country-chip:hover{background:var(--red);color:var(--white);border-color:var(--red);}
-.global-img{width:100%;height:auto;max-height:460px;object-fit:cover;filter:brightness(0.9) saturate(0.85);display:block;}
+.global-img{width:100%;height:auto;max-height:460px;object-fit:cover;filter:brightness(0.9) saturate(0.85);display:block;background:var(--grey-light);}
 
 .team{padding:110px 8vw;background:var(--white);}
 .team-header{text-align:center;margin-bottom:4rem;}
@@ -172,6 +165,7 @@ section{position:relative;}
   position:relative;
   overflow:hidden;
   width:100%;
+  aspect-ratio:1/1;
   background:var(--off-white);
   display:flex;
   align-items:center;
@@ -221,7 +215,7 @@ section{position:relative;}
 .articles-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;}
 .article-card{background:var(--off-white);border:1px solid var(--grey-light);border-top:3px solid var(--red);transition:all 0.25s;cursor:pointer;text-decoration:none;display:flex;flex-direction:column;}
 .article-card:hover{box-shadow:0 14px 44px rgba(139,30,30,0.11);transform:translateY(-4px);}
-.article-img-wrap{width:100%;height:190px;overflow:hidden;flex-shrink:0;}
+.article-img-wrap{width:100%;height:190px;overflow:hidden;flex-shrink:0;background:var(--grey-light);}
 .article-img-wrap img{width:100%;height:100%;object-fit:cover;transition:transform 0.5s ease;}
 .article-card:hover .article-img-wrap img{transform:scale(1.04);}
 .article-img-placeholder{width:100%;height:190px;background:linear-gradient(135deg,var(--grey-light) 0%,var(--off-white) 100%);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
@@ -331,7 +325,7 @@ footer{background:var(--red-dark);padding:3rem 8vw 2rem;}
   .hero{grid-template-columns:1fr;min-height:auto;display:flex;flex-direction:column;}
   .hero-left{padding:90px 6vw 50px;order:1;}
   .hero-right{display:none;}
-  .hero-mobile-img{display:block;order:2;width:100%;height:62vw;min-height:240px;max-height:360px;overflow:hidden;position:relative;flex-shrink:0;}
+  .hero-mobile-img{display:block;order:2;width:100%;height:62vw;min-height:240px;max-height:360px;overflow:hidden;position:relative;flex-shrink:0;background:var(--off-white);}
   .hero-mobile-img img{width:100%;height:100%;object-fit:cover;object-position:center top;filter:brightness(0.88) saturate(0.9);display:block;}
   .hero-mobile-img .hero-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(139,30,30,0.45) 0%,rgba(26,22,20,0.3) 100%);mix-blend-mode:multiply;}
   .hero-tag{margin-bottom:1.2rem;}
@@ -386,13 +380,13 @@ footer{background:var(--red-dark);padding:3rem 8vw 2rem;}
 <body>
 
 <div id="splash" role="status" aria-label="Loading">
-  <img src="assets/logo.png" alt="KMA" class="splash-logo" width="140" height="140">
+  <img src="assets/logo.png" alt="KMA" class="splash-logo" width="140" height="140" decoding="async">
   <div class="splash-bar"><div class="splash-progress"></div></div>
 </div>
 
 <nav id="navbar" role="navigation" aria-label="Main navigation">
   <a href="/" class="logo" aria-label="KMA Home">
-    <img src="assets/logo.png" alt="KMA" class="logo-img" width="80" height="80" loading="eager" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+    <img src="assets/logo.png" alt="KMA" class="logo-img" width="80" height="80" loading="eager" decoding="async" fetchpriority="high" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
     <div class="logo-fallback">
       <div class="logo-text">KMA</div>
       <div class="logo-sub">Chartered Accountants</div>
@@ -426,7 +420,7 @@ footer{background:var(--red-dark);padding:3rem 8vw 2rem;}
       <p class="hero-tag">Kamesh Mali &amp; Associates</p>
       <h1 class="hero-h1">Where Precision<br><em>Meets Purpose.</em></h1>
       <div class="hero-mobile-img" aria-hidden="true">
-        <img src="assets/hero-team.png" alt="Kamesh Mali &amp; Associates team" loading="eager">
+        <img src="assets/hero-team.png" alt="Kamesh Mali &amp; Associates team" loading="eager" decoding="async" fetchpriority="high" width="800" height="500">
         <div class="hero-overlay"></div>
       </div>
       <p class="hero-sub">We partner with you to build solutions that anticipate tomorrow's challenges. As agile entrepreneurs, we listen deeply to craft strategies tailored to your unique needs. With a global presence and local insight, we deliver seamless cross-border support. Our seasoned professionals are committed to excellence, ensuring every client experience is exceptional. At our core, integrity drives us, fostering trust and lasting relationships with our clients, our people, and the communities we serve.</p>
@@ -441,7 +435,7 @@ footer{background:var(--red-dark);padding:3rem 8vw 2rem;}
       </div>
     </div>
     <div class="hero-right" role="img" aria-label="Kamesh Mali &amp; Associates professional team">
-      <img src="assets/hero-team.png" alt="Kamesh Mali &amp; Associates team" loading="eager" fetchpriority="high">
+      <img src="assets/hero-team.png" alt="Kamesh Mali &amp; Associates team" loading="eager" decoding="async" fetchpriority="high" width="900" height="1000">
       <div class="hero-overlay" aria-hidden="true"></div>
     </div>
   </section>
@@ -471,7 +465,7 @@ footer{background:var(--red-dark);padding:3rem 8vw 2rem;}
     <div class="about-img-wrap fade-up">
       <div class="about-img-inner">
         <div class="about-img-frame" aria-hidden="true"></div>
-        <img src="assets/about-team.png" alt="KMA team at work" loading="lazy">
+        <img src="assets/about-team.png" alt="KMA team at work" loading="lazy" decoding="async" width="700" height="500">
       </div>
     </div>
     <div class="about-content fade-up">
@@ -518,7 +512,7 @@ footer{background:var(--red-dark);padding:3rem 8vw 2rem;}
       <div class="countries" id="countries-list"></div>
     </div>
     <div class="fade-up">
-      <img class="global-img" src="assets/global-skyline.png" alt="Global presence" loading="lazy" width="800" height="460">
+      <img class="global-img" src="assets/global-skyline.png" alt="Global presence" loading="lazy" decoding="async" width="800" height="460">
     </div>
   </section>
 
@@ -628,7 +622,7 @@ footer{background:var(--red-dark);padding:3rem 8vw 2rem;}
   <footer>
     <div class="footer-top">
       <div class="footer-brand">
-        <img src="assets/logo.png" alt="Kamesh Mali &amp; Associates" class="footer-logo-img" loading="lazy" onerror="this.style.display='none'">
+        <img src="assets/logo.png" alt="Kamesh Mali &amp; Associates" class="footer-logo-img" loading="lazy" decoding="async" width="120" height="70" onerror="this.style.display='none'">
         <div class="footer-tagline">Kamesh Mali &amp; Associates &middot; Chartered Accountants</div>
       </div>
       <div>
@@ -722,9 +716,21 @@ function esc(s) {
 }
 
 async function loadData() {
-  var res = await fetch(API_URL + '?t=' + Date.now());
+  var cacheKey = 'kma_cfg_cache';
+  var cacheTimeKey = 'kma_cfg_cache_time';
+  var cached = sessionStorage.getItem(cacheKey);
+  var cachedTime = sessionStorage.getItem(cacheTimeKey);
+  if (cached && cachedTime && (Date.now() - Number(cachedTime) < 300000)) {
+    try { return JSON.parse(cached); } catch(e) {}
+  }
+  var res = await fetch(API_URL, { cache: 'no-store' });
   if (!res.ok) throw new Error('API error');
-  return res.json();
+  var data = await res.json();
+  try {
+    sessionStorage.setItem(cacheKey, JSON.stringify(data));
+    sessionStorage.setItem(cacheTimeKey, String(Date.now()));
+  } catch(e) {}
+  return data;
 }
 
 async function init() {
@@ -768,6 +774,7 @@ async function init() {
 
   document.getElementById('footer-copy').textContent = '\u00A9 ' + new Date().getFullYear() + ' Kamesh Mali & Associates \u00B7 All Rights Reserved';
 
+  initLazyImgErrors();
   initNavbar();
   initHamburger();
   initFadeUp();
@@ -798,7 +805,7 @@ function renderTeam(team) {
     if (m.post && String(m.post).trim()) {
       expHtml += '<span class="team-exp-sep">|</span><span class="team-post">' + esc(m.post) + '</span>';
     }
-    return '<article class="team-card fade-up"><div class="team-img-wrap"><img src="' + esc(m.photo) + '" alt="' + esc(m.name) + '" loading="lazy"></div><div class="team-info"><div class="team-role">' + esc(m.role) + '</div><div class="team-name">' + esc(m.name) + '</div><div class="team-bio">' + esc(m.bio) + '</div><div class="team-footer"><div class="team-exp">' + expHtml + '</div><a href="' + esc(m.linkedin) + '" target="_blank" rel="noopener noreferrer" class="linkedin-btn">' + LI_SVG + ' LinkedIn</a></div></div></article>';
+    return '<article class="team-card fade-up"><div class="team-img-wrap"><img src="' + esc(m.photo) + '" alt="' + esc(m.name) + '" loading="lazy" decoding="async" width="340" height="340"></div><div class="team-info"><div class="team-role">' + esc(m.role) + '</div><div class="team-name">' + esc(m.name) + '</div><div class="team-bio">' + esc(m.bio) + '</div><div class="team-footer"><div class="team-exp">' + expHtml + '</div><a href="' + esc(m.linkedin) + '" target="_blank" rel="noopener noreferrer" class="linkedin-btn">' + LI_SVG + ' LinkedIn</a></div></div></article>';
   });
   document.getElementById('team-grid-top').innerHTML = cards.slice(0,3).join('');
   var bottomEl = document.getElementById('team-grid-bottom');
@@ -819,7 +826,7 @@ function renderArticles(featured) {
   var icon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>';
   document.getElementById('articles-grid').innerHTML = featured.length
     ? featured.map(function(a) {
-        return '<a class="article-card fade-up" href="articles.html?slug=' + esc(a.slug) + '">' + (a.cover ? '<div class="article-img-wrap"><img src="' + esc(a.cover) + '" alt="' + esc(a.title) + '" loading="lazy"></div>' : '<div class="article-img-placeholder">' + icon + '</div>') + '<div class="article-body"><div class="article-meta"><span class="article-cat">' + esc(a.category || '') + '</span><span class="article-date">' + esc(a.date || '') + '</span></div><h3 class="article-title">' + esc(a.title) + '</h3><p class="article-excerpt">' + esc(a.excerpt || '') + '</p><span class="article-read-more">Read More <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div></a>';
+        return '<a class="article-card fade-up" href="articles.html?slug=' + esc(a.slug) + '">' + (a.cover ? '<div class="article-img-wrap"><img src="' + esc(a.cover) + '" alt="' + esc(a.title) + '" loading="lazy" decoding="async" width="400" height="190"></div>' : '<div class="article-img-placeholder">' + icon + '</div>') + '<div class="article-body"><div class="article-meta"><span class="article-cat">' + esc(a.category || '') + '</span><span class="article-date">' + esc(a.date || '') + '</span></div><h3 class="article-title">' + esc(a.title) + '</h3><p class="article-excerpt">' + esc(a.excerpt || '') + '</p><span class="article-read-more">Read More <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div></a>';
       }).join('')
     : '<div style="grid-column:1/-1;text-align:center;padding:2rem;color:var(--grey-mid);font-size:0.82rem;">Articles coming soon.</div>';
 }
@@ -846,6 +853,14 @@ function renderFooterSocials(links) {
     .filter(function(e){ return e[1] && e[1] !== '#'; })
     .map(function(e){ var k=e[0],u=e[1]; return '<a href="' + esc(u) + '" class="social-link" rel="noopener noreferrer">' + (svgs[k]||'') + ' ' + k.charAt(0).toUpperCase()+k.slice(1) + '</a>'; })
     .join('');
+}
+
+function initLazyImgErrors() {
+  document.querySelectorAll('img[loading="lazy"]').forEach(function(img) {
+    img.addEventListener('error', function() {
+      img.closest('.team-img-wrap, .article-img-wrap')?.style.setProperty('background', 'var(--grey-light)');
+    }, { once: true });
+  });
 }
 
 function initSplash() {
@@ -960,6 +975,20 @@ async function submitCallback() {
 }
 
 init();
+
+window.addEventListener('load', function() {
+  setTimeout(function() {
+    var gaScript = document.createElement('script');
+    gaScript.async = true;
+    gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-BBF9N922HM';
+    document.head.appendChild(gaScript);
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    window.gtag = gtag;
+    gtag('js', new Date());
+    gtag('config', 'G-BBF9N922HM');
+  }, 1500);
+});
 </script>
 </body>
 </html>
