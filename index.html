@@ -147,8 +147,7 @@ section{position:relative;}
 .country-chip{font-size:0.63rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:7px 14px;border:1px solid var(--grey-light);color:var(--grey-dark);background:var(--white);transition:all 0.2s;cursor:default;font-family:'Segoe UI Emoji','Apple Color Emoji','Noto Color Emoji',sans-serif;}
 .country-chip .flag{font-family:'Segoe UI Emoji','Apple Color Emoji','Noto Color Emoji','Twemoji Mozilla',sans-serif;font-size:1rem;display:inline-block;margin-right:6px;font-style:normal;}
 .country-chip:hover{background:var(--red);color:var(--white);border-color:var(--red);}
-.global-img{width:100%;height:auto;max-height:460px;object-fit:cover;filter:none;display:block;background:var(--grey-light);}
-
+.global-img{width:100%;height:auto;max-height:460px;object-fit:cover;filter:none;display:block;background:transparent;}
 .team{padding:110px 8vw;background:var(--white);}
 .team-header{text-align:center;margin-bottom:4rem;}
 .team-header .section-tag{justify-content:center;}
@@ -511,9 +510,9 @@ footer{background:var(--red-dark);padding:3rem 8vw 2rem;}
       <p class="global-body">KMA serves clients across 9 countries, bringing extensive professional experience with the agility and personal attention of a boutique firm. Our diverse team understands your regulatory landscape and cultural nuances, whether you operate locally or internationally.</p>
       <div class="countries" id="countries-list"></div>
     </div>
-    <div class="fade-up">
-      <img class="global-img" src="assets/global-skyline.png" alt="Global presence" loading="lazy" decoding="async" width="800" height="460">
-    </div>
+    <div class="fade-up" style="isolation: isolate;">
+  <img class="global-img" src="assets/global-skyline.png" alt="Global presence" loading="lazy" decoding="async" width="800" height="460">
+</div>
   </section>
 
   <section class="team" id="team" aria-labelledby="team-title">
